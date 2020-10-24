@@ -3,6 +3,11 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
-    <color name="colorTextPrimary">#212121</color>
+    <color name="colorTextPrimary">#211F1F</color>
+    <color name="colorTextSecondary">#6E6E6E</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorTextInputLayoutBorder">#EBF0FF</color>
+    <color name="colorEditTextHint">#969393</color>
 
 </resources>
