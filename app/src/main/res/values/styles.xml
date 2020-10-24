@@ -26,4 +26,11 @@
         <item name="android:actionMenuTextColor">@color/colorTextPrimary</item>
     </style>
 
+    <style name="AppTheme.SplashScreen">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@mipmap/ic_launcher_round</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
 </resources>
