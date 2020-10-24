@@ -1,4 +1,4 @@
-package com.clevmania.tellerium.ui.auth
+package com.clevmania.tellerium.ui.auth.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.clevmania.tellerium.R
+import com.clevmania.tellerium.ui.auth.AuthError
+import com.clevmania.tellerium.ui.auth.AuthSuccess
+import com.clevmania.tellerium.ui.auth.InvalidUser
 import com.clevmania.tellerium.ui.base.BaseFragment
 import com.clevmania.tellerium.utils.EventObserver
 import com.clevmania.tellerium.utils.ValidationException

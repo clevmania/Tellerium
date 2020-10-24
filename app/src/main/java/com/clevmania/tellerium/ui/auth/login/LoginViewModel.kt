@@ -1,8 +1,12 @@
-package com.clevmania.tellerium.ui.auth
+package com.clevmania.tellerium.ui.auth.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.clevmania.tellerium.ui.auth.AuthError
+import com.clevmania.tellerium.ui.auth.AuthState
+import com.clevmania.tellerium.ui.auth.AuthSuccess
+import com.clevmania.tellerium.ui.auth.InvalidUser
 import com.clevmania.tellerium.utils.EventUtils
 import com.google.firebase.auth.FirebaseAuth
 
@@ -29,7 +33,11 @@ class LoginViewModel : ViewModel() {
             }.addOnFailureListener {
                 _progress.value = EventUtils(false)
                 it.localizedMessage?.let { error ->
-                    _authRequest.value = EventUtils(AuthError(error))
+                    _authRequest.value = EventUtils(
+                        AuthError(
+                            error
+                        )
+                    )
                 }
             }
     }
