@@ -1,20 +1,21 @@
 package com.clevmania.tellerium.ui.farmer
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import com.clevmania.lerium.ui.farmer.model.Farmer
 import com.clevmania.tellerium.R
+import com.clevmania.tellerium.ui.base.BaseFragment
+import com.clevmania.tellerium.utils.EventObserver
+import com.clevmania.tellerium.utils.InjectorUtils
+import kotlinx.android.synthetic.main.farmer_fragment.*
 
-class FarmerFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = FarmerFragment()
-    }
-
-    private lateinit var viewModel: FarmerViewModel
+class FarmerFragment : BaseFragment() {
+    private val farmersList = arrayListOf<Farmer>()
+    private val adapter: FarmerAdapter = FarmerAdapter(farmersList)
+    private val viewModel by viewModels<FarmerViewModel> { InjectorUtils.provideViewModelFactory() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,10 +24,27 @@ class FarmerFragment : Fragment() {
         return inflater.inflate(R.layout.farmer_fragment, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        rvFarmer.adapter = adapter
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(FarmerViewModel::class.java)
-        // TODO: Use the ViewModel
+        with(viewModel) {
+            progress.observe(viewLifecycleOwner, EventObserver {
+                toggleBlockingProgress(it)
+            })
+
+            error.observe(viewLifecycleOwner, EventObserver {
+                showErrorDialog(it)
+            })
+
+            allFarmers.observe(viewLifecycleOwner, EventObserver {
+                farmersList.addAll(it.farmers)
+                adapter.notifyDataSetChanged()
+            })
+        }
     }
 
 }
