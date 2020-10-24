@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
 
     private val navController by lazy { findNavController(R.id.nav_host_fragment)}
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme_NoActionBar)
         super.onCreate(savedInstanceState)
@@ -40,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.loginFragment, R.id.registerFragment,
-                R.id.splashFragment -> {
+                R.id.splashFragment, R.id.farmerFragment -> {
                     toolbar.makeGone()
                 }
                 else -> {
