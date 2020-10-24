@@ -12,4 +12,5 @@
     <string name="register">SignUp</string>
     <string name="title_api_error">Something Went Wrong</string>
     <string name="processing">Please Wait</string>
+    <string name="wrong_credential">Wrong email or password. Try Again!</string>
 </resources>
