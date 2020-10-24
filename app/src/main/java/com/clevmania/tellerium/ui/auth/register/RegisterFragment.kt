@@ -1,4 +1,4 @@
-package com.clevmania.tellerium.ui.auth.login
+package com.clevmania.tellerium.ui.auth.register
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,24 +14,21 @@ import com.clevmania.tellerium.utils.EventObserver
 import com.clevmania.tellerium.utils.ValidationException
 import com.clevmania.tellerium.utils.ValidationType
 import com.clevmania.tellerium.utils.validate
-import kotlinx.android.synthetic.main.login_fragment.*
+import kotlinx.android.synthetic.main.register_fragment.*
 
-class LoginFragment : BaseFragment() {
-    private val viewModel: LoginViewModel by viewModels()
+class RegisterFragment : BaseFragment() {
+    private val viewModel by viewModels<RegisterViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.login_fragment, container, false)
+        return inflater.inflate(R.layout.register_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mbSignIn.setOnClickListener { loginUser() }
-        tvSignUp.setOnClickListener {
-            // nnavigate to signnup
-        }
+        mbCreateAccount.setOnClickListener { registerUser() }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -50,21 +47,26 @@ class LoginFragment : BaseFragment() {
                         showErrorDialog(it.error)
                     }
                     is InvalidUser -> {
-                        showErrorDialog(getString(R.string.wrong_credential))
+                        showErrorDialog(getString(R.string.registeration_error))
                     }
                 }
             })
+
         }
     }
 
-    private fun loginUser() {
+    private fun registerUser() {
         try {
+            val firstName =
+                tilFirstName.validate(ValidationType.NAME, getString(R.string.first_name))
+            val lastName = tilLastName.validate(ValidationType.NAME, getString(R.string.last_name))
             val email = tilEmail.validate(ValidationType.EMAIL, getString(R.string.email))
-            val password = tilPassword.validate(
-                ValidationType.PASSWORD, getString(R.string.password)
-            )
-            viewModel.signInWithEmail(email, password)
+            val mobile = tilMobile.validate(ValidationType.PHONE, getString(R.string.mobile))
+            val password =
+                tilPassword.validate(ValidationType.PASSWORD, getString(R.string.password))
 
+            // Remember to save user details in the db
+            viewModel.registerUser(email, password)
         } catch (ex: ValidationException) {
             ex.printStackTrace()
         }
