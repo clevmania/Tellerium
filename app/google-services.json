@@ -1,0 +1,122 @@
+{
+  "project_info": {
+    "project_number": "152004666103",
+    "firebase_url": "https://grudemy.firebaseio.com",
+    "project_id": "grudemy",
+    "storage_bucket": "grudemy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:152004666103:android:cd37d0fccc6e1c482f29f2",
+        "android_client_info": {
+          "package_name": "com.clevmania.leosbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "152004666103-jlbq37q9ae6v3lekpgelealmnjt728bm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.clevmania.leosbook",
+            "certificate_hash": "33acc5b44a2ce318853b898e0b62aeb3267ad6f2"
+          }
+        },
+        {
+          "client_id": "152004666103-dm45l67kt666enrotpqctvsqmpcdngsi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCo9fSaL9ULB3dhVCj8OEDXCTc1rvaAxAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "152004666103-dm45l67kt666enrotpqctvsqmpcdngsi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:152004666103:android:c5efd5ef6834e0ac2f29f2",
+        "android_client_info": {
+          "package_name": "com.clevmania.tellerium"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "152004666103-edcbjjj34fc94q8rnbffrpann7147j4d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.clevmania.tellerium",
+            "certificate_hash": "33acc5b44a2ce318853b898e0b62aeb3267ad6f2"
+          }
+        },
+        {
+          "client_id": "152004666103-dm45l67kt666enrotpqctvsqmpcdngsi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCo9fSaL9ULB3dhVCj8OEDXCTc1rvaAxAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "152004666103-dm45l67kt666enrotpqctvsqmpcdngsi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:152004666103:android:15a0b9edc13a8dd42f29f2",
+        "android_client_info": {
+          "package_name": "com.clevmania.uberx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "152004666103-ampn4k8r3k5i04f5qevmkkjpg8jtu4tt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.clevmania.uberx",
+            "certificate_hash": "33acc5b44a2ce318853b898e0b62aeb3267ad6f2"
+          }
+        },
+        {
+          "client_id": "152004666103-dm45l67kt666enrotpqctvsqmpcdngsi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCo9fSaL9ULB3dhVCj8OEDXCTc1rvaAxAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "152004666103-dm45l67kt666enrotpqctvsqmpcdngsi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
