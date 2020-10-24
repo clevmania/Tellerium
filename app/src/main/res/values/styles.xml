@@ -48,4 +48,12 @@
 
     </style>
 
+    <style name="ShapeAppearance.App.CircleImageView" parent="">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSizeBottomLeft">10%</item>
+        <item name="cornerSizeTopLeft">10%</item>
+        <item name="cornerSizeTopRight">10%</item>
+        <item name="cornerSizeBottomRight">10%</item>
+    </style>
+
 </resources>

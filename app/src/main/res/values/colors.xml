@@ -9,5 +9,8 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorTextInputLayoutBorder">#EBF0FF</color>
     <color name="colorEditTextHint">#969393</color>
+    <color name="colorSearchIcon">#7E7B7B</color>
+    <color name="colorEditTextBorder">#E5E5E5</color>
+    <color name="colorSearchBoxStroke">#E5E5E5</color>
 
 </resources>
