@@ -5,6 +5,7 @@ package com.clevmania.tellerium.utils
  * for Tellerium
  */
 object Constants{
+    const val FetchLimit : String = "100"
     const val imageBaseUrl = "https://s3-eu-west-1.amazonaws.com/agromall-storage/"
     const val IO_ERROR = "An error occurred and we are unable to process request at the moment"
     const val CONNECTION_ERROR = "Unable to process request, please check your network connection and try again"
