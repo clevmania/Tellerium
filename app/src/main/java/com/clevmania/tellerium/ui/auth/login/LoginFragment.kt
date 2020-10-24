@@ -45,7 +45,7 @@ class LoginFragment : BaseFragment() {
             authRequest.observe(viewLifecycleOwner, EventObserver {
                 when (it) {
                     is AuthSuccess -> {
-                        // navigate to farmer screen
+                        findNavController().navigate(R.id.action_loginFragment_to_farmerFragment)
                     }
                     is AuthError -> {
                         showErrorDialog(it.error)
