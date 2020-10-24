@@ -27,8 +27,6 @@ class LoginViewModel : ViewModel() {
                 _progress.value = EventUtils(false)
                 if (task.isSuccessful) {
                     _authRequest.value = EventUtils(AuthSuccess)
-                } else {
-                    _authRequest.value = EventUtils(InvalidUser)
                 }
             }.addOnFailureListener {
                 _progress.value = EventUtils(false)

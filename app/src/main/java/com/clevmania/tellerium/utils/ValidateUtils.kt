@@ -21,18 +21,18 @@ fun TextInputLayout.validate(validationType: ValidationType,
                              label: String, length : Int?=null): String{
     val value = this.editText?.text.toString()
 
-    // Validate empty field
-    if (value.trim().isBlank()) {
-        this.error = "$label is required"
-        this.isErrorEnabled = true
-        throw  ValidationException("$label is required")
-    }
-
     this.editText?.doOnTextChanged { _, _, _, _ ->
         if(this.isErrorEnabled){
             this.error = ""
             this.isErrorEnabled = false
         }
+    }
+
+    // Validate empty field
+    if (value.trim().isBlank()) {
+        this.error = "$label is required"
+        this.isErrorEnabled = true
+        throw  ValidationException("$label is required")
     }
 
     // Validate the length of input

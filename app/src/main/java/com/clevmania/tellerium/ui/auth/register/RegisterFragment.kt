@@ -46,9 +46,6 @@ class RegisterFragment : BaseFragment() {
                     is AuthError -> {
                         showErrorDialog(it.error)
                     }
-                    is InvalidUser -> {
-                        showErrorDialog(getString(R.string.registeration_error))
-                    }
                 }
             })
 
