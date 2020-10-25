@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.identity.IdentityFragment">
+
+    <TextView
+        android:id="@+id/tvIdTypeHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="ID Type:" />
+
+    <TextView
+        android:id="@+id/tvIdType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/tvIdTypeHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvIdTypeHeader"
+        app:layout_constraintTop_toTopOf="@+id/tvIdTypeHeader"
+        tools:text="09072341223" />
+
+    <TextView
+        android:id="@+id/tvIdNumberHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintStart_toStartOf="@+id/tvIdTypeHeader"
+        app:layout_constraintTop_toBottomOf="@+id/tvIdTypeHeader"
+        android:text="ID Number:" />
+
+    <TextView
+        android:id="@+id/tvIdNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/tvIdNumberHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvIdNumberHeader"
+        app:layout_constraintTop_toTopOf="@+id/tvIdNumberHeader"
+        tools:text="09072341223" />
+
+    <TextView
+        android:id="@+id/tvIssuedDateHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintStart_toStartOf="@id/tvIdNumberHeader"
+        app:layout_constraintTop_toBottomOf="@id/tvIdNumber"
+        android:text="Issued Date:" />
+
+    <TextView
+        android:id="@+id/tvIssuedDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/tvIssuedDateHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvIssuedDateHeader"
+        app:layout_constraintTop_toTopOf="@+id/tvIssuedDateHeader"
+        tools:text="09072341223" />
+
+    <TextView
+        android:id="@+id/tvExpiryDateHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintStart_toStartOf="@+id/tvIssuedDateHeader"
+        app:layout_constraintTop_toBottomOf="@+id/tvIssuedDateHeader"
+        android:text="Expiry Date:" />
+
+    <TextView
+        android:id="@+id/tvExpiryDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/tvExpiryDateHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvExpiryDateHeader"
+        app:layout_constraintTop_toTopOf="@+id/tvExpiryDateHeader"
+        tools:text="09072341223" />
+
+    <TextView
+        android:id="@+id/tvIdImageHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintStart_toStartOf="@id/tvExpiryDateHeader"
+        app:layout_constraintTop_toBottomOf="@id/tvExpiryDate"
+        android:text="ID Image:" />
+
+    <TextView
+        android:id="@+id/tvIdImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/tvIdImageHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvIdImageHeader"
+        app:layout_constraintTop_toTopOf="@+id/tvIdImageHeader"
+        tools:text="09072341223" />
+
+    <ImageView
+        android:id="@+id/ivIdImage"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:padding="16dp"
+        android:background="@drawable/edit_border"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvIdImage"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvFarmerPhotoHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintStart_toStartOf="@id/ivIdImage"
+        app:layout_constraintTop_toBottomOf="@id/ivIdImage"
+        android:text="Passport" />
+
+    <TextView
+        android:id="@+id/tvFarmerPhoto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFarmerPhotoHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvFarmerPhotoHeader"
+        app:layout_constraintTop_toTopOf="@+id/tvFarmerPhotoHeader"
+        tools:text="09072341223" />
+
+    <ImageView
+        android:id="@+id/ivFarmerPhoto"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:padding="16dp"
+        android:scaleType="centerInside"
+        android:background="@drawable/edit_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFarmerPhoto"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <TextView
+        android:id="@+id/tvFingerPrintHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintStart_toStartOf="@id/ivFarmerPhoto"
+        app:layout_constraintTop_toBottomOf="@id/ivFarmerPhoto"
+        android:text="FingerPrint" />
+
+    <TextView
+        android:id="@+id/tvFingerPrint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFingerPrintHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvFingerPrintHeader"
+        app:layout_constraintTop_toTopOf="@+id/tvFingerPrintHeader"
+        tools:text="09072341223" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:padding="16dp"
+        android:scaleType="centerInside"
+        android:background="@drawable/edit_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFingerPrint"
+        tools:src="@tools:sample/avatars" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
