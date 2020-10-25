@@ -1,4 +1,4 @@
-package com.clevmania.lerium.ui.farmer.model
+package com.clevmania.tellerium.ui.farmer.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

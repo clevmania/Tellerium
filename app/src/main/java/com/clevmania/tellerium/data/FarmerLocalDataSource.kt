@@ -1,14 +1,14 @@
 package com.clevmania.tellerium.data
 
 import androidx.lifecycle.LiveData
-import com.clevmania.lerium.ui.farmer.model.Farmer
+import com.clevmania.tellerium.ui.farmer.model.Farmer
 
 /**
  * @author by Lawrence on 10/25/20.
  * for Tellerium
  */
 class FarmerLocalDataSource(private val farmerDao: FarmerDao): FarmerDataSource {
-    override suspend fun getAllFarmers(): LiveData<List<Farmer>> {
+    override fun getAllFarmers(): LiveData<List<Farmer>> {
         return farmerDao.getAllFarmers()
     }
 

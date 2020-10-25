@@ -5,7 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.clevmania.lerium.ui.farmer.model.Farmer
+import androidx.lifecycle.Observer
+import com.clevmania.tellerium.ui.farmer.model.Farmer
 import com.clevmania.tellerium.R
 import com.clevmania.tellerium.ui.base.BaseFragment
 import com.clevmania.tellerium.utils.EventObserver
@@ -15,7 +16,9 @@ import kotlinx.android.synthetic.main.farmer_fragment.*
 class FarmerFragment : BaseFragment() {
     private val farmersList = arrayListOf<Farmer>()
     private val adapter: FarmerAdapter = FarmerAdapter(farmersList)
-    private val viewModel by viewModels<FarmerViewModel> { InjectorUtils.provideViewModelFactory() }
+    private val viewModel by viewModels<FarmerViewModel> {
+        InjectorUtils.provideViewModelFactory(requireContext())
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,8 +43,8 @@ class FarmerFragment : BaseFragment() {
                 showErrorDialog(it)
             })
 
-            allFarmers.observe(viewLifecycleOwner, EventObserver {
-                farmersList.addAll(it.farmers)
+            allFarmers.observe(viewLifecycleOwner, Observer {
+                farmersList.addAll(it)
                 adapter.notifyDataSetChanged()
             })
         }

@@ -1,4 +1,4 @@
-package com.clevmania.lerium.ui.farmer.model
+package com.clevmania.tellerium.ui.farmer.model
 
 data class AllFarmersData(
     val farmers: List<Farmer>,

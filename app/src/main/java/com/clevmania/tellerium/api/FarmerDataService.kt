@@ -1,6 +1,6 @@
 package com.clevmania.tellerium.api
 
-import com.clevmania.lerium.ui.farmer.model.AllFarmersData
+import com.clevmania.tellerium.ui.farmer.model.AllFarmersData
 import com.clevmania.tellerium.ui.model.TelleriumApiResponse
 import retrofit2.http.GET
 import retrofit2.http.Query

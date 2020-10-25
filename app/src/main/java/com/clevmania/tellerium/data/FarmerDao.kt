@@ -2,7 +2,7 @@ package com.clevmania.tellerium.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.clevmania.lerium.ui.farmer.model.Farmer
+import com.clevmania.tellerium.ui.farmer.model.Farmer
 
 /**
  * @author by Lawrence on 10/25/20.
@@ -10,10 +10,10 @@ import com.clevmania.lerium.ui.farmer.model.Farmer
  */
 @Dao
 interface FarmerDao{
-    @Query("Select * FROM Farmer")
-    suspend fun getAllFarmers() : LiveData<List<Farmer>>
+    @Query("Select * FROM farmer")
+    fun getAllFarmers() : LiveData<List<Farmer>>
 
-    @Query("SELECT * FROM Farmer where farmer_id=:farmerId")
+    @Query("SELECT * FROM farmer where farmer_id=:farmerId")
     suspend fun getFarmerById(farmerId : String): Farmer
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

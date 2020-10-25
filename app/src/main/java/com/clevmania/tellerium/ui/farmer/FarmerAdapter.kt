@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.clevmania.lerium.ui.farmer.model.Farmer
+import com.clevmania.tellerium.ui.farmer.model.Farmer
 import com.clevmania.tellerium.R
 import com.clevmania.tellerium.utils.Constants
 import com.clevmania.tellerium.utils.loadImage
