@@ -5,6 +5,7 @@ package com.clevmania.tellerium.utils
  * for Tellerium
  */
 object Constants{
+    const val DATABASE_NAME: String = "farmers.db"
     const val PERSONAL_PAGE_INDEX = 0
     const val IDENTITY_PAGE_INDEX = 1
     const val FARM_PAGE_INDEX = 2
