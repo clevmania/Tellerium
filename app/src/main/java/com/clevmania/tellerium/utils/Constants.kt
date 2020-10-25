@@ -5,6 +5,9 @@ package com.clevmania.tellerium.utils
  * for Tellerium
  */
 object Constants{
+    const val PERSONAL_PAGE_INDEX = 0
+    const val IDENTITY_PAGE_INDEX = 1
+    const val FARM_PAGE_INDEX = 2
     const val FetchLimit : String = "100"
     const val imageBaseUrl = "https://s3-eu-west-1.amazonaws.com/agromall-storage/"
     const val IO_ERROR = "An error occurred and we are unable to process request at the moment"

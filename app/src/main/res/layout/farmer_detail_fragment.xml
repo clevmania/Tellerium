@@ -28,7 +28,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ivFarmerPassport">
 
         <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tlBookDetails"
+            android:id="@+id/tlFarmerDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabIndicator="@drawable/ic_tab_divider"
@@ -39,7 +39,7 @@
             app:tabTextColor="@color/colorTextSecondary" />
 
         <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/vpBookDetailsPager"
+            android:id="@+id/vpFarmerDetails"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1" />
