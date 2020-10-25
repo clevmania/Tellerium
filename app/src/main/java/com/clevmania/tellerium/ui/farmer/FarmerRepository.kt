@@ -1,7 +1,7 @@
 package com.clevmania.tellerium.ui.farmer
 
 import com.clevmania.lerium.ui.farmer.model.AllFarmersData
-import com.clevmania.tellerium.ui.api.FarmerDataService
+import com.clevmania.tellerium.api.FarmerDataService
 import com.clevmania.tellerium.ui.model.TelleriumApiResponse
 
 /**

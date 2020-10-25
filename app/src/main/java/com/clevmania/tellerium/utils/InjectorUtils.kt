@@ -1,7 +1,7 @@
 package com.clevmania.tellerium.utils
 
-import com.clevmania.tellerium.ui.api.FarmerDataService
-import com.clevmania.tellerium.ui.api.TelleriumApiService
+import com.clevmania.tellerium.api.FarmerDataService
+import com.clevmania.tellerium.api.TelleriumApiService
 import com.clevmania.tellerium.ui.farmer.FarmerRepository
 import com.clevmania.tellerium.ui.farmer.FarmerViewModelFactory
 

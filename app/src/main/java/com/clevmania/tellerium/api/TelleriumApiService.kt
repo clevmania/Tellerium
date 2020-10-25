@@ -1,4 +1,4 @@
-package com.clevmania.tellerium.ui.api
+package com.clevmania.tellerium.api
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

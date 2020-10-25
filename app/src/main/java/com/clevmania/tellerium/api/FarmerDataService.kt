@@ -1,4 +1,4 @@
-package com.clevmania.tellerium.ui.api
+package com.clevmania.tellerium.api
 
 import com.clevmania.lerium.ui.farmer.model.AllFarmersData
 import com.clevmania.tellerium.ui.model.TelleriumApiResponse
