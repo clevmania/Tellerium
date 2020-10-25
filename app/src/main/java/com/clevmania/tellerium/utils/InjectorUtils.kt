@@ -9,6 +9,7 @@ import com.clevmania.tellerium.data.FarmerDatabase
 import com.clevmania.tellerium.data.FarmerLocalDataSource
 import com.clevmania.tellerium.ui.farmer.FarmerRepository
 import com.clevmania.tellerium.ui.farmer.FarmerViewModelFactory
+import com.clevmania.tellerium.ui.farmerdetail.FarmerDetailViewModelFactory
 
 /**
  * @author by Lawrence on 10/24/20.
@@ -34,5 +35,9 @@ object InjectorUtils {
 
     fun provideFarmerDataSource(context : Context): FarmerLocalDataSource{
         return FarmerLocalDataSource(provideDao(context))
+    }
+
+    fun provideFarmerDetailViewModelFactory(context: Context): FarmerDetailViewModelFactory{
+        return FarmerDetailViewModelFactory(provideFarmerDataSource(context))
     }
 }

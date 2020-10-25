@@ -5,18 +5,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import com.clevmania.tellerium.R
+import com.clevmania.tellerium.ui.base.BaseFragment
+import com.clevmania.tellerium.ui.farmer.FarmerViewModel
 import com.clevmania.tellerium.utils.Constants
+import com.clevmania.tellerium.utils.EventObserver
+import com.clevmania.tellerium.utils.InjectorUtils
+import com.clevmania.tellerium.utils.loadImage
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.farmer_detail_fragment.*
 
-class FarmerDetailFragment : Fragment() {
+class FarmerDetailFragment : BaseFragment() {
+    private val args : FarmerDetailFragmentArgs by navArgs()
+
+    private val viewModel by viewModels<FarmerDetailViewModel> {
+        InjectorUtils.provideFarmerDetailViewModelFactory(requireContext())
+    }
 
     companion object {
         fun newInstance() = FarmerDetailFragment()
     }
-
-    private lateinit var viewModel: FarmerDetailViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +37,7 @@ class FarmerDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.getFarmer(args.id)
         vpFarmerDetails.adapter = FarmerDetailsAdapter(this,viewModel)
         TabLayoutMediator(tlFarmerDetails, vpFarmerDetails) { tab, position ->
             tab.text = getTabTitle(position)
@@ -45,7 +56,18 @@ class FarmerDetailFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         with(viewModel) {
+            progress.observe(viewLifecycleOwner, EventObserver {
+                toggleBlockingProgress(it)
+            })
 
+            error.observe(viewLifecycleOwner, EventObserver {
+                showErrorDialog(it)
+            })
+
+            farmerInfo.observe(viewLifecycleOwner, EventObserver{
+                ivFarmerPassport.loadImage(
+                    getString(R.string.farmers_image,Constants.imageBaseUrl,it.passport_photo))
+            })
         }
     }
 
