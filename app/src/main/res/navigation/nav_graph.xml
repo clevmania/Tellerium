@@ -38,5 +38,18 @@
         android:id="@+id/farmerFragment"
         android:name="com.clevmania.tellerium.ui.farmer.FarmerFragment"
         android:label="farmer_fragment"
-        tools:layout="@layout/farmer_fragment" />
+        tools:layout="@layout/farmer_fragment" >
+        <action
+            android:id="@+id/action_farmerFragment_to_farmerDetailFragment"
+            app:destination="@id/farmerDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/farmerDetailFragment"
+        android:name="com.clevmania.tellerium.ui.farmerdetail.FarmerDetailFragment"
+        android:label="farmer_detail_fragment"
+        tools:layout="@layout/farmer_detail_fragment" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
 </navigation>

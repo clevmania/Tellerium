@@ -3,6 +3,7 @@ package com.clevmania.tellerium.ui.farmer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.clevmania.tellerium.ui.farmer.model.Farmer
 import com.clevmania.tellerium.R
@@ -22,6 +23,11 @@ class FarmerAdapter(private val farmersList: List<Farmer>): RecyclerView.Adapter
             itemView.tvFarmerMobile.text = farmer.mobile_no
             itemView.tvLocale.text = farmer.lga
             itemView.ivFarmerImg.loadImage(prepareImageLink(farmer.passport_photo))
+            itemView.setOnClickListener {
+                val action = FarmerFragmentDirections
+                    .actionFarmerFragmentToFarmerDetailFragment(farmer.farmer_id)
+                it.findNavController().navigate(action)
+            }
         }
 
         private fun prepareImageLink(link: String): String{
