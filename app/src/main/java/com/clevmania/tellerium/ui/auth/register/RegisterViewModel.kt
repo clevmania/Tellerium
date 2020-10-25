@@ -19,6 +19,7 @@ class RegisterViewModel : ViewModel() {
     val authRequest: LiveData<EventUtils<AuthState>> = _authRequest
 
     fun registerUser(email: String, password: String) {
+        _progress.value = EventUtils(true)
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 _progress.value = EventUtils(false)

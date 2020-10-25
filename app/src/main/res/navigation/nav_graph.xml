@@ -29,7 +29,11 @@
         android:id="@+id/registerFragment"
         android:name="com.clevmania.tellerium.ui.auth.register.RegisterFragment"
         android:label="register_fragment"
-        tools:layout="@layout/register_fragment" />
+        tools:layout="@layout/register_fragment" >
+        <action
+            android:id="@+id/action_registerFragment_to_farmerFragment"
+            app:destination="@id/farmerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/farmerFragment"
         android:name="com.clevmania.tellerium.ui.farmer.FarmerFragment"

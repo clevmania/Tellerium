@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.clevmania.tellerium.R
 import com.clevmania.tellerium.ui.auth.AuthError
 import com.clevmania.tellerium.ui.auth.AuthSuccess
@@ -41,7 +42,7 @@ class RegisterFragment : BaseFragment() {
             authRequest.observe(viewLifecycleOwner, EventObserver {
                 when (it) {
                     is AuthSuccess -> {
-                        // navigate to farmer screen
+                        findNavController().navigate(R.id.action_registerFragment_to_farmerFragment)
                     }
                     is AuthError -> {
                         showErrorDialog(it.error)
