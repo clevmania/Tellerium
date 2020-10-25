@@ -22,6 +22,12 @@ class FarmerDetailViewModel(private val dataSource: FarmerLocalDataSource) : Vie
     private val _farmerInfo = MutableLiveData<EventUtils<Farmer>>()
     val farmerInfo : LiveData<EventUtils<Farmer>> = _farmerInfo
 
+    private val _sharedFarmerInfo = MutableLiveData<EventUtils<Farmer>>()
+    val sharedFarmerInfo : LiveData<EventUtils<Farmer>> = _sharedFarmerInfo
+
+    private val _sharedIdentityInfo = MutableLiveData<EventUtils<Farmer>>()
+    val sharedIdentityInfo : LiveData<EventUtils<Farmer>> = _sharedIdentityInfo
+
 
     fun getFarmer(farmerId: String){
         viewModelScope.launch {
@@ -33,5 +39,10 @@ class FarmerDetailViewModel(private val dataSource: FarmerLocalDataSource) : Vie
                 _error.value = EventUtils(ex.toErrorMessage())
             }
         }
+    }
+
+    fun shareFarmerDetail(farmer: Farmer){
+        _sharedFarmerInfo.value = EventUtils(farmer)
+        _sharedIdentityInfo.value = EventUtils(farmer)
     }
 }

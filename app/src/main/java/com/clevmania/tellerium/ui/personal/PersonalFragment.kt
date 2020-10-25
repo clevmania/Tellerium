@@ -29,7 +29,7 @@ class PersonalFragment : Fragment(){
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         with(viewModel){
-            farmerInfo.observe(viewLifecycleOwner, EventObserver{
+            sharedFarmerInfo.observe(viewLifecycleOwner, EventObserver{
                 populateView(it)
             })
         }

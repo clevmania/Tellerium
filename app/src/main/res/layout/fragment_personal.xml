@@ -1,409 +1,415 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/tvRegNoHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextSecondary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="Registration Number:" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvRegNo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvRegNoHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvRegNoHeader"
-        app:layout_constraintTop_toTopOf="@+id/tvRegNoHeader"
-        tools:text="09072341223" />
+        <TextView
+            android:id="@+id/tvRegNoHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextSecondary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Registration Number:" />
 
-    <TextView
-        android:id="@+id/tvBvnHeader"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextSecondary"
-        app:layout_constraintStart_toStartOf="@+id/tvRegNoHeader"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegNoHeader"
-        android:text="BVN:" />
+        <TextView
+            android:id="@+id/tvRegNo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRegNoHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvRegNoHeader"
+            app:layout_constraintTop_toTopOf="@+id/tvRegNoHeader"
+            tools:text="09072341223" />
 
-    <TextView
-        android:id="@+id/tvBvn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvBvnHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvBvnHeader"
-        app:layout_constraintTop_toTopOf="@+id/tvBvnHeader"
-        tools:text="09072341223" />
+        <TextView
+            android:id="@+id/tvBvnHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextSecondary"
+            app:layout_constraintStart_toStartOf="@+id/tvRegNoHeader"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegNoHeader"
+            android:text="BVN:" />
 
-    <TextView
-        android:id="@+id/tvFirstNameHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextSecondary"
-        app:layout_constraintStart_toStartOf="@id/tvBvnHeader"
-        app:layout_constraintTop_toBottomOf="@id/tvBvn"
-        android:text="First Name:" />
+        <TextView
+            android:id="@+id/tvBvn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvBvnHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvBvnHeader"
+            app:layout_constraintTop_toTopOf="@+id/tvBvnHeader"
+            tools:text="09072341223" />
 
-    <TextView
-        android:id="@+id/tvFirstName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvFirstNameHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvFirstNameHeader"
-        app:layout_constraintTop_toTopOf="@+id/tvFirstNameHeader"
-        tools:text="09072341223" />
+        <TextView
+            android:id="@+id/tvFirstNameHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextSecondary"
+            app:layout_constraintStart_toStartOf="@id/tvBvnHeader"
+            app:layout_constraintTop_toBottomOf="@id/tvBvn"
+            android:text="First Name:" />
 
-    <TextView
-        android:id="@+id/tvMiddleNameHeader"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextSecondary"
-        app:layout_constraintStart_toStartOf="@+id/tvFirstNameHeader"
-        app:layout_constraintTop_toBottomOf="@+id/tvFirstNameHeader"
-        android:text="Middle Name:" />
+        <TextView
+            android:id="@+id/tvFirstName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvFirstNameHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvFirstNameHeader"
+            app:layout_constraintTop_toTopOf="@+id/tvFirstNameHeader"
+            tools:text="09072341223" />
 
-    <TextView
-        android:id="@+id/tvMiddleName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvMiddleNameHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvMiddleNameHeader"
-        app:layout_constraintTop_toTopOf="@+id/tvMiddleNameHeader"
-        tools:text="09072341223" />
+        <TextView
+            android:id="@+id/tvMiddleNameHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextSecondary"
+            app:layout_constraintStart_toStartOf="@+id/tvFirstNameHeader"
+            app:layout_constraintTop_toBottomOf="@+id/tvFirstNameHeader"
+            android:text="Middle Name:" />
 
-    <TextView
-        android:id="@+id/tvSurNameHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextSecondary"
-        app:layout_constraintStart_toStartOf="@id/tvMiddleNameHeader"
-        app:layout_constraintTop_toBottomOf="@id/tvMiddleName"
-        android:text="Surname:" />
+        <TextView
+            android:id="@+id/tvMiddleName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvMiddleNameHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvMiddleNameHeader"
+            app:layout_constraintTop_toTopOf="@+id/tvMiddleNameHeader"
+            tools:text="09072341223" />
 
-    <TextView
-        android:id="@+id/tvSurName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvSurNameHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvSurNameHeader"
-        app:layout_constraintTop_toTopOf="@+id/tvSurNameHeader"
-        tools:text="09072341223" />
+        <TextView
+            android:id="@+id/tvSurNameHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextSecondary"
+            app:layout_constraintStart_toStartOf="@id/tvMiddleNameHeader"
+            app:layout_constraintTop_toBottomOf="@id/tvMiddleName"
+            android:text="Surname:" />
 
-    <TextView
-        android:id="@+id/tvDobHeader"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextSecondary"
-        app:layout_constraintStart_toStartOf="@+id/tvSurNameHeader"
-        app:layout_constraintTop_toBottomOf="@+id/tvSurNameHeader"
-        android:text="DOB:" />
+        <TextView
+            android:id="@+id/tvSurName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSurNameHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvSurNameHeader"
+            app:layout_constraintTop_toTopOf="@+id/tvSurNameHeader"
+            tools:text="09072341223" />
 
-    <TextView
-        android:id="@+id/tvDob"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvDobHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvDobHeader"
-        app:layout_constraintTop_toTopOf="@+id/tvDobHeader"
-        tools:text="09072341223" />
+        <TextView
+            android:id="@+id/tvDobHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextSecondary"
+            app:layout_constraintStart_toStartOf="@+id/tvSurNameHeader"
+            app:layout_constraintTop_toBottomOf="@+id/tvSurNameHeader"
+            android:text="DOB:" />
 
-    <TextView
-        android:id="@+id/tvGenderHeader"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextSecondary"
-        app:layout_constraintStart_toStartOf="@+id/tvDobHeader"
-        app:layout_constraintTop_toBottomOf="@+id/tvDobHeader"
-        android:text="Gender::" />
+        <TextView
+            android:id="@+id/tvDob"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDobHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvDobHeader"
+            app:layout_constraintTop_toTopOf="@+id/tvDobHeader"
+            tools:text="09072341223" />
 
-    <TextView
-        android:id="@+id/tvGender"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvGenderHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvGenderHeader"
-        app:layout_constraintTop_toTopOf="@+id/tvGenderHeader"
-        tools:text="09072341223" />
+        <TextView
+            android:id="@+id/tvGenderHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextSecondary"
+            app:layout_constraintStart_toStartOf="@+id/tvDobHeader"
+            app:layout_constraintTop_toBottomOf="@+id/tvDobHeader"
+            android:text="Gender::" />
 
-    <TextView
-        android:id="@+id/tvNationalityHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextSecondary"
-        app:layout_constraintStart_toStartOf="@id/tvGenderHeader"
-        app:layout_constraintTop_toBottomOf="@id/tvGenderHeader"
-        android:text="Nationality:" />
+        <TextView
+            android:id="@+id/tvGender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvGenderHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvGenderHeader"
+            app:layout_constraintTop_toTopOf="@+id/tvGenderHeader"
+            tools:text="09072341223" />
 
-    <TextView
-        android:id="@+id/tvNationality"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvNationalityHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvNationalityHeader"
-        app:layout_constraintTop_toTopOf="@+id/tvNationalityHeader"
-        tools:text="09072341223" />
+        <TextView
+            android:id="@+id/tvNationalityHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextSecondary"
+            app:layout_constraintStart_toStartOf="@id/tvGenderHeader"
+            app:layout_constraintTop_toBottomOf="@id/tvGenderHeader"
+            android:text="Nationality:" />
 
-    <TextView
-        android:id="@+id/tvOccupationHeader"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextSecondary"
-        app:layout_constraintStart_toStartOf="@+id/tvNationalityHeader"
-        app:layout_constraintTop_toBottomOf="@+id/tvNationalityHeader"
-        android:text="Occupation:" />
+        <TextView
+            android:id="@+id/tvNationality"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvNationalityHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvNationalityHeader"
+            app:layout_constraintTop_toTopOf="@+id/tvNationalityHeader"
+            tools:text="09072341223" />
 
-    <TextView
-        android:id="@+id/tvOccupation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvOccupationHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvOccupationHeader"
-        app:layout_constraintTop_toTopOf="@+id/tvOccupationHeader"
-        tools:text="09072341223" />
+        <TextView
+            android:id="@+id/tvOccupationHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextSecondary"
+            app:layout_constraintStart_toStartOf="@+id/tvNationalityHeader"
+            app:layout_constraintTop_toBottomOf="@+id/tvNationalityHeader"
+            android:text="Occupation:" />
 
-    <TextView
-        android:id="@+id/tvMaritalStatusHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextSecondary"
-        app:layout_constraintStart_toStartOf="@id/tvOccupationHeader"
-        app:layout_constraintTop_toBottomOf="@id/tvOccupationHeader"
-        android:text="Marital Status:" />
+        <TextView
+            android:id="@+id/tvOccupation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvOccupationHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvOccupationHeader"
+            app:layout_constraintTop_toTopOf="@+id/tvOccupationHeader"
+            tools:text="09072341223" />
 
-    <TextView
-        android:id="@+id/tvMaritalStatus"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvMaritalStatusHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvMaritalStatusHeader"
-        app:layout_constraintTop_toTopOf="@+id/tvMaritalStatusHeader"
-        tools:text="09072341223" />
+        <TextView
+            android:id="@+id/tvMaritalStatusHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextSecondary"
+            app:layout_constraintStart_toStartOf="@id/tvOccupationHeader"
+            app:layout_constraintTop_toBottomOf="@id/tvOccupationHeader"
+            android:text="Marital Status:" />
 
-    <TextView
-        android:id="@+id/tvSpouseNameHeader"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextSecondary"
-        app:layout_constraintStart_toStartOf="@+id/tvMaritalStatusHeader"
-        app:layout_constraintTop_toBottomOf="@+id/tvMaritalStatusHeader"
-        android:text="Spouse Name:" />
+        <TextView
+            android:id="@+id/tvMaritalStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvMaritalStatusHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvMaritalStatusHeader"
+            app:layout_constraintTop_toTopOf="@+id/tvMaritalStatusHeader"
+            tools:text="09072341223" />
 
-    <TextView
-        android:id="@+id/tvSpouseName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvSpouseNameHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvSpouseNameHeader"
-        app:layout_constraintTop_toTopOf="@+id/tvSpouseNameHeader"
-        tools:text="09072341223" />
+        <TextView
+            android:id="@+id/tvSpouseNameHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextSecondary"
+            app:layout_constraintStart_toStartOf="@+id/tvMaritalStatusHeader"
+            app:layout_constraintTop_toBottomOf="@+id/tvMaritalStatusHeader"
+            android:text="Spouse Name:" />
 
-    <TextView
-        android:id="@+id/tvAddressHeader"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextSecondary"
-        app:layout_constraintStart_toStartOf="@+id/tvSpouseNameHeader"
-        app:layout_constraintTop_toBottomOf="@+id/tvSpouseNameHeader"
-        android:text="Address:" />
+        <TextView
+            android:id="@+id/tvSpouseName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSpouseNameHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvSpouseNameHeader"
+            app:layout_constraintTop_toTopOf="@+id/tvSpouseNameHeader"
+            tools:text="09072341223" />
 
-    <TextView
-        android:id="@+id/tvAddress"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvAddressHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvAddressHeader"
-        app:layout_constraintTop_toTopOf="@+id/tvAddressHeader"
-        tools:text="09072341223" />
+        <TextView
+            android:id="@+id/tvAddressHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextSecondary"
+            app:layout_constraintStart_toStartOf="@+id/tvSpouseNameHeader"
+            app:layout_constraintTop_toBottomOf="@+id/tvSpouseNameHeader"
+            android:text="Address:" />
 
-    <TextView
-        android:id="@+id/tvCityHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextSecondary"
-        app:layout_constraintStart_toStartOf="@id/tvAddressHeader"
-        app:layout_constraintTop_toBottomOf="@id/tvAddressHeader"
-        android:text="City:" />
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAddressHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvAddressHeader"
+            app:layout_constraintTop_toTopOf="@+id/tvAddressHeader"
+            tools:text="09072341223" />
 
-    <TextView
-        android:id="@+id/tvCity"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvCityHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvCityHeader"
-        app:layout_constraintTop_toTopOf="@+id/tvCityHeader"
-        tools:text="09072341223" />
+        <TextView
+            android:id="@+id/tvCityHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextSecondary"
+            app:layout_constraintStart_toStartOf="@id/tvAddressHeader"
+            app:layout_constraintTop_toBottomOf="@id/tvAddressHeader"
+            android:text="City:" />
 
-    <TextView
-        android:id="@+id/tvLGAHeader"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextSecondary"
-        app:layout_constraintStart_toStartOf="@+id/tvCityHeader"
-        app:layout_constraintTop_toBottomOf="@+id/tvCityHeader"
-        android:text="LGA:" />
+        <TextView
+            android:id="@+id/tvCity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvCityHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvCityHeader"
+            app:layout_constraintTop_toTopOf="@+id/tvCityHeader"
+            tools:text="09072341223" />
 
-    <TextView
-        android:id="@+id/tvLGA"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvLGAHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvLGAHeader"
-        app:layout_constraintTop_toTopOf="@+id/tvLGAHeader"
-        tools:text="09072341223" />
+        <TextView
+            android:id="@+id/tvLGAHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextSecondary"
+            app:layout_constraintStart_toStartOf="@+id/tvCityHeader"
+            app:layout_constraintTop_toBottomOf="@+id/tvCityHeader"
+            android:text="LGA:" />
 
-    <TextView
-        android:id="@+id/tvMobileHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextSecondary"
-        app:layout_constraintStart_toStartOf="@id/tvLGAHeader"
-        app:layout_constraintTop_toBottomOf="@id/tvLGAHeader"
-        android:text="Mobile Number:" />
+        <TextView
+            android:id="@+id/tvLGA"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvLGAHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvLGAHeader"
+            app:layout_constraintTop_toTopOf="@+id/tvLGAHeader"
+            tools:text="09072341223" />
 
-    <TextView
-        android:id="@+id/tvMobile"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvMobileHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvMobileHeader"
-        app:layout_constraintTop_toTopOf="@+id/tvMobileHeader"
-        tools:text="09072341223" />
+        <TextView
+            android:id="@+id/tvMobileHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextSecondary"
+            app:layout_constraintStart_toStartOf="@id/tvLGAHeader"
+            app:layout_constraintTop_toBottomOf="@id/tvLGAHeader"
+            android:text="Mobile Number:" />
 
-    <TextView
-        android:id="@+id/tvEmailAddressHeader"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextSecondary"
-        app:layout_constraintStart_toStartOf="@+id/tvMobileHeader"
-        app:layout_constraintTop_toBottomOf="@+id/tvMobileHeader"
-        android:text="Email Address:" />
+        <TextView
+            android:id="@+id/tvMobile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvMobileHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvMobileHeader"
+            app:layout_constraintTop_toTopOf="@+id/tvMobileHeader"
+            tools:text="09072341223" />
 
-    <TextView
-        android:id="@+id/tvEmailAddress"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvEmailAddressHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvEmailAddressHeader"
-        app:layout_constraintTop_toTopOf="@+id/tvEmailAddressHeader"
-        tools:text="09072341223" />
+        <TextView
+            android:id="@+id/tvEmailAddressHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextSecondary"
+            app:layout_constraintStart_toStartOf="@+id/tvMobileHeader"
+            app:layout_constraintTop_toBottomOf="@+id/tvMobileHeader"
+            android:text="Email Address:" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvEmailAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvEmailAddressHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvEmailAddressHeader"
+            app:layout_constraintTop_toTopOf="@+id/tvEmailAddressHeader"
+            tools:text="09072341223" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

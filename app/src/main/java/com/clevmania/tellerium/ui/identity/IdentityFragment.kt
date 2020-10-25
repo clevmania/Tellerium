@@ -28,7 +28,7 @@ class IdentityFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         with(viewModel){
-            farmerInfo.observe(viewLifecycleOwner, EventObserver{
+            sharedIdentityInfo.observe(viewLifecycleOwner, EventObserver{
                 populateView(it)
             })
         }
@@ -50,7 +50,7 @@ class IdentityFragment : Fragment() {
         tvFarmerPhoto.text = farmer.passport_photo
         ivFarmerPhoto.loadImage(getString(
             R.string.farmers_image,Constants.imageBaseUrl,farmer.passport_photo))
-        farmer.fingerprint.splitToSequence(",").first().apply {
+        farmer.fingerprint.splitToSequence(";").first().apply {
             tvFingerPrint.text = this
             ivFingerPrint.loadImage(getString(R.string.farmers_image, Constants.imageBaseUrl,this))
         }

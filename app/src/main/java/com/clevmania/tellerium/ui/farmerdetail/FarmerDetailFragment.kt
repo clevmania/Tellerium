@@ -67,6 +67,7 @@ class FarmerDetailFragment : BaseFragment() {
             farmerInfo.observe(viewLifecycleOwner, EventObserver{
                 ivFarmerPassport.loadImage(
                     getString(R.string.farmers_image,Constants.imageBaseUrl,it.passport_photo))
+                shareFarmerDetail(it)
             })
         }
     }
