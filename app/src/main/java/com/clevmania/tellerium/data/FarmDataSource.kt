@@ -8,4 +8,6 @@ interface FarmDataSource {
     suspend fun getCapturedFarmById(farmerId: String): FarmEntity
 
     suspend fun captureFarm(farm: FarmEntity): Int
+
+    suspend fun insertFarm(farm : FarmEntity)
 }

@@ -14,5 +14,6 @@
     <color name="colorSearchBoxStroke">#E5E5E5</color>
     <color name="colorDivider">#BDBDBD</color>
     <color name="colorPrimaryButton">#046637</color>
+    <color name="colorFillPolygon">#abccbc</color>
 
 </resources>

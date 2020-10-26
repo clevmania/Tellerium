@@ -24,7 +24,7 @@ class SuccessFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mbDone.setOnClickListener {
-            // Navigate to dashboard
+            dismiss()
         }
     }
 

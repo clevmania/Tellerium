@@ -1,9 +1,6 @@
 package com.clevmania.tellerium.data
 
-import androidx.room.Dao
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 
 /**
  * @author by Lawrence on 10/26/20.
@@ -16,4 +13,7 @@ interface FarmDao {
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
     suspend fun captureFarm(farm : FarmEntity) : Int
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertFarm(farm : FarmEntity)
 }

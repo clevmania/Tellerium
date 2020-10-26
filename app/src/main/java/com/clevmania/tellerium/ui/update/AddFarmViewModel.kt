@@ -18,14 +18,14 @@ class AddFarmViewModel(private val farmLocalDataSource: FarmLocalDataSource) : V
     private val _error = MutableLiveData<EventUtils<String>>()
     val error : LiveData<EventUtils<String>> = _error
 
-    private val _newFarm = MutableLiveData<EventUtils<Int>>()
-    val newFarm : LiveData<EventUtils<Int>> = _newFarm
+    private val _newFarm = MutableLiveData<EventUtils<Unit>>()
+    val newFarm : LiveData<EventUtils<Unit>> = _newFarm
 
     fun saveCapturedFarm(farm: FarmEntity){
         viewModelScope.launch {
             _progress.value = EventUtils(true)
             try {
-                val response = farmLocalDataSource.captureFarm(farm)
+                val response = farmLocalDataSource.insertFarm(farm)
                 _newFarm.value = EventUtils(response)
             }catch (ex : Exception){
                 _error.value = EventUtils(ex.toErrorMessage())

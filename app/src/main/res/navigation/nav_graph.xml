@@ -65,6 +65,8 @@
         tools:layout="@layout/add_farm_fragment" >
         <action
             android:id="@+id/action_addFarmFragment_to_successFragment"
+            app:popUpTo="@id/farmerDetailFragment"
+            app:popUpToInclusive="false"
             app:destination="@id/successFragment" />
         <argument
             android:name="id"
