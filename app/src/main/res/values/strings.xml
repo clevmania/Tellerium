@@ -28,4 +28,6 @@
     <string name="google_maps_key" translatable="false">AIzaSyDZfqcOO19TAdGmupEa1sV3MCBJqRwLfbQ</string>
     <string name="save">Save</string>
     <string name="done">Done</string>
+    <string name="new_farmer_registration">New Farmer Registration</string>
+    <string name="dashboard">View Dashboard</string>
 </resources>

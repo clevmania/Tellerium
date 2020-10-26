@@ -4,15 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.clevmania.tellerium.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.success_fragment.*
 
 class SuccessFragment : BottomSheetDialogFragment() {
-
-    companion object {
-        fun newInstance() = SuccessFragment()
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,6 +22,10 @@ class SuccessFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         mbDone.setOnClickListener {
             dismiss()
+        }
+        mbViewDashboard.setOnClickListener {
+            dismiss()
+            findNavController().navigate(R.id.action_successFragment_to_dashBoardFragment)
         }
     }
 
