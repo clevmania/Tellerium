@@ -13,6 +13,7 @@ buildscript {
         analytics = '17.6.0'
         auth = '19.4.0'
         play_services = '18.1.0'
+        play_maps = '17.0.0'
     }
 
     repositories {

@@ -11,6 +11,6 @@ import com.clevmania.tellerium.R
 class SplashFragment : Fragment() {
     override fun onStart() {
         super.onStart()
-        findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
+        findNavController().navigate(R.id.action_splashFragment_to_farmerFragment)
     }
 }

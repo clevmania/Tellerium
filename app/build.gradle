@@ -81,6 +81,10 @@ dependencies {
     /**Google play services*/
     implementation "com.google.android.gms:play-services-auth:$play_services"
 
+    /**Google Maps**/
+    implementation "com.google.android.gms:play-services-maps:$play_maps"
+
+
 }
 
 apply plugin: 'com.google.gms.google-services'

@@ -82,13 +82,14 @@
         app:layout_constraintTop_toTopOf="@+id/tvFarmCoordinatesHeader"
         tools:text="09072341223" />
 
-    <View
-        android:id="@+id/view"
+    <fragment
+        android:id="@+id/map"
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_marginTop="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:background="@drawable/edit_border"
         app:layout_constraintTop_toBottomOf="@id/tvFarmCoordinates"
         app:layout_constraintStart_toStartOf="parent"
@@ -112,6 +113,6 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
+        app:layout_constraintTop_toBottomOf="@+id/map" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
