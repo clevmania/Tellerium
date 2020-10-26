@@ -1,18 +1,21 @@
 package com.clevmania.tellerium.ui.farmerdetail.farm
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.clevmania.tellerium.R
+import com.clevmania.tellerium.data.FarmEntity
 import com.clevmania.tellerium.ui.farmerdetail.FarmerDetailViewModel
+import com.clevmania.tellerium.utils.EventObserver
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
+import kotlinx.android.synthetic.main.fragment_capture_farm.*
 
 
 class CaptureFarmFragment : Fragment(), OnMapReadyCallback {
@@ -36,8 +39,29 @@ class CaptureFarmFragment : Fragment(), OnMapReadyCallback {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         with(viewModel){
-
+            farmInfo.observe(viewLifecycleOwner, EventObserver{
+                populateView(it)
+            })
         }
+    }
+
+    private fun populateView(it: FarmEntity){
+        latLngList.add(LatLng(it.lat_one,it.lng_one))
+        latLngList.add(LatLng(it.lat_two,it.lng_two))
+        latLngList.add(LatLng(it.lat_three,it.lng_three))
+        latLngList.add(LatLng(it.lat_three,it.lng_three))
+        tvFarmName.text = it.farm_name
+        tvFarmLocation.text = it.farm_location
+        tvFarmCoordinates.text = buildCoordinates(it.lat_one,it.lng_one,
+            it.lat_two,it.lng_two,it.lat_three,it.lng_three,it.lat_four,it.lng_four)
+    }
+
+    private fun buildCoordinates(vararg double: Double): String{
+        val coordinates  = StringBuilder()
+        double.forEach {
+            coordinates.append(it)
+        }
+        return coordinates.toString()
     }
 
     companion object {
@@ -52,11 +76,12 @@ class CaptureFarmFragment : Fragment(), OnMapReadyCallback {
 
         val poly = mMap.addPolygon(
             PolygonOptions()
-                .add(LatLng(6.509544, 3.371094), LatLng(6.549890, 3.360590),
-                    LatLng(6.538200, 3.383590), LatLng(6.532310, 3.382380))
-                .strokeColor(Color.RED)
+                .addAll(latLngList)
+//                .add(LatLng(6.509544, 3.371094), LatLng(6.549890, 3.360590),
+//                    LatLng(6.538200, 3.383590), LatLng(6.532310, 3.382380))
+                .strokeColor(ContextCompat.getColor(requireContext(),R.color.colorAccent))
                 .strokeWidth(2F)
-                .fillColor(Color.BLUE)
+                .fillColor(ContextCompat.getColor(requireContext(),R.color.colorAccent))
         )
 
         val bounds = LatLngBounds.builder()

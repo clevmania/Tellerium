@@ -1,12 +1,9 @@
 package com.clevmania.tellerium.utils
 
 import android.content.Context
-import androidx.room.RoomDatabase
 import com.clevmania.tellerium.api.FarmerDataService
 import com.clevmania.tellerium.api.TelleriumApiService
-import com.clevmania.tellerium.data.FarmerDao
-import com.clevmania.tellerium.data.FarmerDatabase
-import com.clevmania.tellerium.data.FarmerLocalDataSource
+import com.clevmania.tellerium.data.*
 import com.clevmania.tellerium.ui.farmer.FarmerRepository
 import com.clevmania.tellerium.ui.farmer.FarmerViewModelFactory
 import com.clevmania.tellerium.ui.farmerdetail.FarmerDetailViewModelFactory
@@ -17,7 +14,7 @@ import com.clevmania.tellerium.ui.farmerdetail.FarmerDetailViewModelFactory
  */
 
 object InjectorUtils {
-    private fun provideService(): FarmerDataService{
+    private fun provideService(): FarmerDataService {
         return TelleriumApiService.invoke().create(FarmerDataService::class.java)
     }
 
@@ -29,15 +26,29 @@ object InjectorUtils {
         return FarmerViewModelFactory(provideFarmerRepository(context))
     }
 
-    private fun provideDao(context: Context): FarmerDao{
-        return FarmerDatabase.getInstance(context).farmerDao()
+    private fun provideDatabase(context: Context): FarmerDatabase {
+        return FarmerDatabase.getInstance(context)
     }
 
-    fun provideFarmerDataSource(context : Context): FarmerLocalDataSource{
+    private fun provideDao(context: Context): FarmerDao {
+        return provideDatabase(context).farmerDao()
+    }
+
+    private fun provideFarmDao(context: Context): FarmDao {
+        return provideDatabase(context).farmDao()
+    }
+
+    private fun provideFarmerDataSource(context: Context): FarmerLocalDataSource {
         return FarmerLocalDataSource(provideDao(context))
     }
 
-    fun provideFarmerDetailViewModelFactory(context: Context): FarmerDetailViewModelFactory{
-        return FarmerDetailViewModelFactory(provideFarmerDataSource(context))
+    private fun provideFarmDataSource(context: Context): FarmLocalDataSource {
+        return FarmLocalDataSource(provideFarmDao(context))
+    }
+
+    fun provideFarmerDetailViewModelFactory(context: Context): FarmerDetailViewModelFactory {
+        return FarmerDetailViewModelFactory(
+            provideFarmerDataSource(context), provideFarmDataSource(context)
+        )
     }
 }

@@ -11,9 +11,10 @@ import com.clevmania.tellerium.utils.Constants
  * @author by Lawrence on 10/25/20.
  * for Tellerium
  */
-@Database(entities = [Farmer::class], version = 1, exportSchema = false)
+@Database(entities = [Farmer::class, FarmEntity::class], version = 2, exportSchema = false)
 abstract class FarmerDatabase : RoomDatabase() {
     abstract fun farmerDao() : FarmerDao
+    abstract fun farmDao(): FarmDao
 
     companion object{
         @Volatile private var instance : FarmerDatabase? = null
@@ -25,7 +26,7 @@ abstract class FarmerDatabase : RoomDatabase() {
                         ?: Room.databaseBuilder(
                             context.applicationContext,
                             FarmerDatabase::class.java, Constants.DATABASE_NAME
-                        ).build().also { instance = it }
+                        ).fallbackToDestructiveMigration().build().also { instance = it }
                 }
 
         }
