@@ -1,4 +1,4 @@
-package com.clevmania.tellerium.ui.farm
+package com.clevmania.tellerium.ui.farmerdetail.farm
 
 import android.graphics.Color
 import android.os.Bundle

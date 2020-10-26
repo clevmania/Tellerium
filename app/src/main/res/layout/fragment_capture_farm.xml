@@ -1,118 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.farm.CaptureFarmFragment">
+    tools:context=".ui.farmerdetail.farm.CaptureFarmFragment">
 
-    <TextView
-        android:id="@+id/tvFarmNameHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextSecondary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="Farm Name:" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginBottom="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvFarmName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvFarmNameHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvFarmNameHeader"
-        app:layout_constraintTop_toTopOf="@+id/tvFarmNameHeader"
-        tools:text="09072341223" />
+        <TextView
+            android:id="@+id/tvFarmNameHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextSecondary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Farm Name:" />
 
-    <TextView
-        android:id="@+id/tvFarmLocationHeader"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextSecondary"
-        app:layout_constraintStart_toStartOf="@+id/tvFarmNameHeader"
-        app:layout_constraintTop_toBottomOf="@+id/tvFarmNameHeader"
-        android:text="Farm Location:" />
+        <TextView
+            android:id="@+id/tvFarmName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvFarmNameHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvFarmNameHeader"
+            app:layout_constraintTop_toTopOf="@+id/tvFarmNameHeader"
+            tools:text="09072341223" />
 
-    <TextView
-        android:id="@+id/tvFarmLocation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvFarmLocationHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvFarmLocationHeader"
-        app:layout_constraintTop_toTopOf="@+id/tvFarmLocationHeader"
-        tools:text="09072341223" />
+        <TextView
+            android:id="@+id/tvFarmLocationHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextSecondary"
+            app:layout_constraintStart_toStartOf="@+id/tvFarmNameHeader"
+            app:layout_constraintTop_toBottomOf="@+id/tvFarmNameHeader"
+            android:text="Farm Location:" />
 
-    <TextView
-        android:id="@+id/tvFarmCoordinatesHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextSecondary"
-        app:layout_constraintStart_toStartOf="@id/tvFarmLocationHeader"
-        app:layout_constraintTop_toBottomOf="@id/tvFarmLocation"
-        android:text="Farm Coordinates:" />
+        <TextView
+            android:id="@+id/tvFarmLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvFarmLocationHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvFarmLocationHeader"
+            app:layout_constraintTop_toTopOf="@+id/tvFarmLocationHeader"
+            tools:text="09072341223" />
 
-    <TextView
-        android:id="@+id/tvFarmCoordinates"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/source_sans_pro_regular"
-        android:textColor="@color/colorTextPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/tvFarmCoordinatesHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvFarmCoordinatesHeader"
-        app:layout_constraintTop_toTopOf="@+id/tvFarmCoordinatesHeader"
-        tools:text="09072341223" />
+        <TextView
+            android:id="@+id/tvFarmCoordinatesHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextSecondary"
+            app:layout_constraintStart_toStartOf="@id/tvFarmLocationHeader"
+            app:layout_constraintTop_toBottomOf="@id/tvFarmLocation"
+            android:text="Farm Coordinates:" />
 
-    <fragment
-        android:id="@+id/map"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:background="@drawable/edit_border"
-        app:layout_constraintTop_toBottomOf="@id/tvFarmCoordinates"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="16dp" />
+        <TextView
+            android:id="@+id/tvFarmCoordinates"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:textColor="@color/colorTextPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/tvFarmCoordinatesHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvFarmCoordinatesHeader"
+            app:layout_constraintTop_toTopOf="@+id/tvFarmCoordinatesHeader"
+            tools:text="09072341223" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/mbCaptureFarm"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/button_height"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        android:fontFamily="@font/source_sans_pro_bold"
-        android:text="@string/capture_farm_details"
-        android:textAllCaps="false"
-        app:strokeWidth="2dp"
-        app:strokeColor="@color/colorPrimaryButton"
-        android:textColor="@color/colorPrimaryButton"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/map" />
+        <fragment
+            android:id="@+id/map"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:background="@drawable/edit_border"
+            app:layout_constraintTop_toBottomOf="@id/tvFarmCoordinates"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:layout_editor_absoluteY="16dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mbCaptureFarm"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/source_sans_pro_bold"
+            android:text="@string/capture_farm_details"
+            android:textAllCaps="false"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/colorPrimaryButton"
+            android:textColor="@color/colorPrimaryButton"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/map" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

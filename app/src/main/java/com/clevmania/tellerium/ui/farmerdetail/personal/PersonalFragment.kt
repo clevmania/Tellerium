@@ -1,4 +1,4 @@
-package com.clevmania.tellerium.ui.personal
+package com.clevmania.tellerium.ui.farmerdetail.personal
 
 import android.os.Bundle
 import android.view.LayoutInflater

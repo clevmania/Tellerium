@@ -1,4 +1,4 @@
-package com.clevmania.tellerium.ui.identity
+package com.clevmania.tellerium.ui.farmerdetail.identity
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -44,14 +44,14 @@ class IdentityFragment : Fragment() {
         tvIdNumber.text = farmer.id_no
         tvIssuedDate.text = farmer.issue_date
         tvExpiryDate.text = farmer.expiry_date
-        tvIdImage.text = farmer.id_image
+        tvIdImage.text = farmer.id_image.takeLast(20)
         ivIdImage.loadImage(getString(
             R.string.farmers_image,Constants.imageBaseUrl,farmer.id_image))
-        tvFarmerPhoto.text = farmer.passport_photo
+        tvFarmerPhoto.text = farmer.passport_photo.takeLast(20)
         ivFarmerPhoto.loadImage(getString(
             R.string.farmers_image,Constants.imageBaseUrl,farmer.passport_photo))
         farmer.fingerprint.splitToSequence(";").first().apply {
-            tvFingerPrint.text = this
+            tvFingerPrint.text = this.takeLast(20)
             ivFingerPrint.loadImage(getString(R.string.farmers_image, Constants.imageBaseUrl,this))
         }
 
