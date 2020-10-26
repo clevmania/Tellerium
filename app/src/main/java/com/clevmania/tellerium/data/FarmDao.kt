@@ -16,4 +16,7 @@ interface FarmDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertFarm(farm : FarmEntity)
+
+    @Query("Select COUNT(*) FROM farm")
+    suspend fun countFarm(): Int
 }

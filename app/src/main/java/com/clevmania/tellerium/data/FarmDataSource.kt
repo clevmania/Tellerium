@@ -10,4 +10,7 @@ interface FarmDataSource {
     suspend fun captureFarm(farm: FarmEntity): Int
 
     suspend fun insertFarm(farm : FarmEntity)
+
+    suspend fun countFarm(): Int
+
 }

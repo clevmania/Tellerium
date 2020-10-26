@@ -4,6 +4,7 @@ import android.content.Context
 import com.clevmania.tellerium.api.FarmerDataService
 import com.clevmania.tellerium.api.TelleriumApiService
 import com.clevmania.tellerium.data.*
+import com.clevmania.tellerium.ui.dashboard.DashboardViewModelFactory
 import com.clevmania.tellerium.ui.farmer.FarmerRepository
 import com.clevmania.tellerium.ui.farmer.FarmerViewModelFactory
 import com.clevmania.tellerium.ui.farmerdetail.FarmerDetailViewModelFactory
@@ -55,5 +56,10 @@ object InjectorUtils {
 
     fun provideAddFarmViewModelFactory(context: Context): AddFarmViewModelFactory {
         return AddFarmViewModelFactory(provideFarmDataSource(context))
+    }
+
+    fun provideDashboardViewModelFactory(context: Context): DashboardViewModelFactory{
+        return DashboardViewModelFactory(provideFarmerDataSource(context),
+            provideFarmDataSource(context))
     }
 }

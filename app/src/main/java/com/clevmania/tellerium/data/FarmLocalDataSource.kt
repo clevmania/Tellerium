@@ -16,4 +16,8 @@ class FarmLocalDataSource(private val farmDao: FarmDao): FarmDataSource {
     override suspend fun insertFarm(farm: FarmEntity) {
         return farmDao.insertFarm(farm)
     }
+
+    override suspend fun countFarm(): Int {
+        return farmDao.countFarm()
+    }
 }

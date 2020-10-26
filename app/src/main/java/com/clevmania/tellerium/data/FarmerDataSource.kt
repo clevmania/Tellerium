@@ -15,4 +15,7 @@ interface FarmerDataSource {
     suspend fun insertAll(farmersList: List<Farmer>)
 
     suspend fun updateFarmer(farmer: Farmer) : Int
+
+    suspend fun countFarmers(): Int
+
 }

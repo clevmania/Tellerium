@@ -23,4 +23,8 @@ class FarmerLocalDataSource(private val farmerDao: FarmerDao): FarmerDataSource 
     override suspend fun updateFarmer(farmer: Farmer): Int {
         return farmerDao.updateFarmer(farmer)
     }
+
+    override suspend fun countFarmers(): Int {
+        return farmerDao.countFarmers()
+    }
 }

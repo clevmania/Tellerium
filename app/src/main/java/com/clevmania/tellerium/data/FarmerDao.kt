@@ -13,6 +13,9 @@ interface FarmerDao{
     @Query("Select * FROM farmer")
     fun getAllFarmers() : LiveData<List<Farmer>>
 
+    @Query("Select COUNT(*) FROM farmer")
+    suspend fun countFarmers(): Int
+
     @Query("SELECT * FROM farmer where farmer_id=:farmerId")
     suspend fun getFarmerById(farmerId : String): Farmer
 
