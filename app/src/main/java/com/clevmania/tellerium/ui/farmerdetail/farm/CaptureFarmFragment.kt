@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.clevmania.tellerium.R
 import com.clevmania.tellerium.data.FarmEntity
+import com.clevmania.tellerium.ui.farmerdetail.FarmerDetailFragmentDirections
 import com.clevmania.tellerium.ui.farmerdetail.FarmerDetailViewModel
 import com.clevmania.tellerium.utils.EventObserver
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -21,7 +23,7 @@ import kotlinx.android.synthetic.main.fragment_capture_farm.*
 class CaptureFarmFragment : Fragment(), OnMapReadyCallback {
     private lateinit var viewModel: FarmerDetailViewModel
     private val latLngList = arrayListOf<LatLng>()
-
+    private lateinit var farmerId : String
 
     private lateinit var mMap: GoogleMap
     private lateinit var mapFragment : SupportMapFragment
@@ -36,11 +38,24 @@ class CaptureFarmFragment : Fragment(), OnMapReadyCallback {
         return rootView
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        mbCaptureFarm.setOnClickListener {
+            val action = FarmerDetailFragmentDirections
+                .actionFarmerDetailFragmentToAddFarmFragment(farmerId)
+            findNavController().navigate(action)
+        }
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         with(viewModel){
             farmInfo.observe(viewLifecycleOwner, EventObserver{
                 populateView(it)
+            })
+
+            fID.observe(viewLifecycleOwner, EventObserver{
+                farmerId = it
             })
         }
     }

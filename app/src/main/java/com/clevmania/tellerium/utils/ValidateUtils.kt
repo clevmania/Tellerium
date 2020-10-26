@@ -13,7 +13,7 @@ import java.util.regex.Pattern
 class ValidationException (message:String)  : Exception(message)
 
 enum class ValidationType {
-    EMAIL, PHONE, PASSWORD, NAME
+    EMAIL, PHONE, PASSWORD, NAME, LATITUDE, LONGITUDE
 }
 
 @Throws(ValidationException::class)
@@ -72,6 +72,22 @@ fun TextInputLayout.validate(validationType: ValidationType,
                 this.error = "$label cannot be a number"
                 this.isErrorEnabled = true
                 throw ValidationException("Cannot be a number")
+            }
+        }
+        ValidationType.LATITUDE -> {
+            val latPattern = "^(\\+|-)?(?:90(?:(?:\\.0{1,6})?)|(?:[0-9]|[1-8][0-9])(?:(?:\\.[0-9]{1,6})?))\$"
+            if(!Pattern.compile(latPattern).matcher(value).matches()){
+                this.error = "Invalid Latitude"
+                this.isErrorEnabled = true
+                throw ValidationException("Incorrect Mobile Number")
+            }
+        }
+        ValidationType.LONGITUDE -> {
+            val lngPattern = "^(\\+|-)?(?:180(?:(?:\\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\\.[0-9]{1,6})?))\$"
+            if(!Pattern.compile(lngPattern).matcher(value).matches()){
+                this.error = "Invalid Longitude"
+                this.isErrorEnabled = true
+                throw ValidationException("Incorrect Mobile Number")
             }
         }
     }

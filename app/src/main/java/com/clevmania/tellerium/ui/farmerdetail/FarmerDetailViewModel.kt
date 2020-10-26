@@ -27,6 +27,9 @@ class FarmerDetailViewModel(
     private val _farmerInfo = MutableLiveData<EventUtils<Farmer>>()
     val farmerInfo : LiveData<EventUtils<Farmer>> = _farmerInfo
 
+    private val _fID = MutableLiveData<EventUtils<String>>()
+    val fID : LiveData<EventUtils<String>> = _fID
+
     private val _farmInfo = MutableLiveData<EventUtils<FarmEntity>>()
     val farmInfo : LiveData<EventUtils<FarmEntity>> = _farmInfo
 
@@ -55,5 +58,6 @@ class FarmerDetailViewModel(
     fun shareFarmerDetail(farmer: Farmer){
         _sharedFarmerInfo.value = EventUtils(farmer)
         _sharedIdentityInfo.value = EventUtils(farmer)
+        _fID.value = EventUtils(farmer.farmer_id)
     }
 }
