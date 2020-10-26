@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.update.AddFarmFragment">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilFirstName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeColor="@color/colorTextInputLayoutBorder"
+        app:boxStrokeWidth="1dp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFarmName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:hint="@string/first_name"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/colorEditTextHint" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilLastName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeColor="@color/colorTextInputLayoutBorder"
+        app:boxStrokeWidth="1dp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFarmLocation">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieLastName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:hint="@string/last_name"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/colorEditTextHint" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvFarmName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Farm Name"
+        android:fontFamily="@font/source_sans_pro_semi_bold"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvFarmLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/source_sans_pro_semi_bold"
+        android:text="Farm Name"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilFirstName" />
+
+    <TextView
+        android:id="@+id/tvFarmCoordinates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/source_sans_pro_semi_bold"
+        android:text="Farm Coordinates"
+        android:textColor="@color/colorTextPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilLastName" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilLongitude"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeColor="@color/colorTextInputLayoutBorder"
+        app:boxStrokeWidth="1dp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toStartOf="@+id/tilLatitude"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFarmCoordinates">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieLongitude"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:hint="Longitude"
+            android:inputType="numberDecimal"
+            android:maxLength="11"
+            android:textColor="@color/colorTextPrimary" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilLatitude"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeColor="@color/colorTextInputLayoutBorder"
+        app:boxStrokeWidth="1dp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:layout_constraintStart_toEndOf="@+id/tilLongitude"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFarmCoordinates">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieLatitude"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:hint="Latitude"
+            android:inputType="numberDecimal"
+            android:maxLength="11"
+            android:textColor="@color/colorTextPrimary" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilLongitudeTwo"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeColor="@color/colorTextInputLayoutBorder"
+        app:boxStrokeWidth="1dp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toStartOf="@+id/tilLatitudeTwo"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilLongitude">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieLongitudeTwo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:hint="Longitude"
+            android:inputType="numberDecimal"
+            android:maxLength="11"
+            android:textColor="@color/colorTextPrimary" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilLatitudeTwo"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeColor="@color/colorTextInputLayoutBorder"
+        app:boxStrokeWidth="1dp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:layout_constraintStart_toEndOf="@+id/tilLongitudeTwo"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilLatitude">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieLatitudeTwo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:hint="Latitude"
+            android:inputType="numberDecimal"
+            android:maxLength="11"
+            android:textColor="@color/colorTextPrimary" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilLongitudeThree"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeColor="@color/colorTextInputLayoutBorder"
+        app:boxStrokeWidth="1dp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toStartOf="@+id/tilLatitudeThree"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilLongitudeTwo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieLongitudeThree"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:hint="Longitude"
+            android:inputType="numberDecimal"
+            android:maxLength="11"
+            android:textColor="@color/colorTextPrimary" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilLatitudeThree"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeColor="@color/colorTextInputLayoutBorder"
+        app:boxStrokeWidth="1dp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:layout_constraintStart_toEndOf="@+id/tilLongitudeThree"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilLatitudeTwo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieLatitudeThree"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:hint="Latitude"
+            android:inputType="numberDecimal"
+            android:maxLength="11"
+            android:textColor="@color/colorTextPrimary" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilLongitudeFour"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeColor="@color/colorTextInputLayoutBorder"
+        app:boxStrokeWidth="1dp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toStartOf="@+id/tilLatitudeFour"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilLongitudeThree">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieLongitudeFour"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:hint="Longitude"
+            android:inputType="numberDecimal"
+            android:maxLength="11"
+            android:textColor="@color/colorTextPrimary" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilLatitudeFour"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:boxStrokeColor="@color/colorTextInputLayoutBorder"
+        app:boxStrokeWidth="1dp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:layout_constraintStart_toEndOf="@+id/tilLongitudeFour"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilLatitudeThree">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieLatitudeFour"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/source_sans_pro_regular"
+            android:hint="Latitude"
+            android:inputType="numberDecimal"
+            android:maxLength="11"
+            android:textColor="@color/colorTextPrimary" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mbSaveFarm"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height"
+        android:fontFamily="@font/source_sans_pro_bold"
+        android:text="@string/save"
+        android:textAllCaps="false"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        app:backgroundTint="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilLongitudeFour" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

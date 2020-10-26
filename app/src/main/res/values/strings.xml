@@ -26,4 +26,5 @@
     <string name="farm_capture">Farm</string>
 <!--    <string name="google_maps_key" translatable="false">AIzaSyB_qsP8AOP_P0Md1Pz-48TDaJYjTP3vbjo</string>-->
     <string name="google_maps_key" translatable="false">AIzaSyDZfqcOO19TAdGmupEa1sV3MCBJqRwLfbQ</string>
+    <string name="save">Save</string>
 </resources>
