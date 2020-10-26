@@ -19,13 +19,17 @@ class FarmerViewModel(private val repository: FarmerRepository) : ViewModel() {
 
     var allFarmers: LiveData<List<Farmer>> = repository.getFarmers()
 
-    init { fetchFarmers() }
+    init {
+        if(allFarmers.value.isNullOrEmpty()){
+            fetchFarmers()
+        }
+    }
 
     private fun fetchFarmers() {
         viewModelScope.launch {
             _progress.value = EventUtils(true)
             try {
-                repository.fetchFarmersUpTo(FetchLimit)
+                repository.fetchFarmersUpTo(FetchLimit, isFetchNeeded = true)
 
             } catch (ex: Exception) {
                 ex.printStackTrace()

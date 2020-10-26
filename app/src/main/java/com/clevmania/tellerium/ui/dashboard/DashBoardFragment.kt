@@ -15,7 +15,6 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.dash_board_fragment.*
 
 class DashBoardFragment : BaseFragment() {
-    private var totalFarmer: Int = 0
 
     private val viewModel by viewModels<DashBoardViewModel> {
         InjectorUtils.provideDashboardViewModelFactory(requireContext())
@@ -39,6 +38,8 @@ class DashBoardFragment : BaseFragment() {
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
+        var totalFarmer = 0
+
         super.onActivityCreated(savedInstanceState)
         with(viewModel){
             progress.observe(viewLifecycleOwner, EventObserver {
@@ -49,15 +50,18 @@ class DashBoardFragment : BaseFragment() {
                 showErrorDialog(it)
             })
 
-            farmCount.observe(viewLifecycleOwner, EventObserver{
-                tvUpdatedFarmer.text = it.toString()
-                tvPendingCapture.text = it.minus(totalFarmer).toString()
-            })
-
             farmersCount.observe(viewLifecycleOwner, EventObserver{
                 totalFarmer = it
                 tvTotalFarmerCount.text = it.toString()
+
             })
+
+            farmCount.observe(viewLifecycleOwner, EventObserver{
+                tvUpdatedFarmer.text = it.toString()
+                tvPendingCapture.text = getString(R.string.total_farmer, totalFarmer.minus(it))
+            })
+
+
         }
     }
 

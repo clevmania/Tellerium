@@ -24,10 +24,10 @@
     <string name="personal">Personal</string>
     <string name="identification">Identification</string>
     <string name="farm_capture">Farm</string>
-<!--    <string name="google_maps_key" translatable="false">AIzaSyB_qsP8AOP_P0Md1Pz-48TDaJYjTP3vbjo</string>-->
     <string name="google_maps_key" translatable="false">AIzaSyDZfqcOO19TAdGmupEa1sV3MCBJqRwLfbQ</string>
     <string name="save">Save</string>
     <string name="done">Done</string>
     <string name="new_farmer_registration">New Farmer Registration</string>
     <string name="dashboard">View Dashboard</string>
+    <string name="total_farmer">%d</string>
 </resources>

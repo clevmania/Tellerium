@@ -15,19 +15,18 @@ class FarmerRepository(
     private val apiService: FarmerDataService,
     private val dataSource: FarmerLocalDataSource
 ) {
-//    suspend fun fetchFarmersUpTo(limit: String): TelleriumApiResponse<AllFarmersData> {
-//        return apiService.fetchFarmers(limit)
-//    }
 
     fun getFarmers(): LiveData<List<Farmer>> {
         return dataSource.getAllFarmers()
     }
 
-    suspend fun fetchFarmersUpTo(limit: String) {
-        withContext(Dispatchers.IO) {
-            val allFarmersData = apiService.fetchFarmers(limit)
-            allFarmersData.data?.let {
-                dataSource.insertAll(it.farmers)
+    suspend fun fetchFarmersUpTo(limit: String, isFetchNeeded: Boolean = false) {
+        if (isFetchNeeded){
+            withContext(Dispatchers.IO) {
+                val allFarmersData = apiService.fetchFarmers(limit)
+                allFarmersData.data?.let {
+                    dataSource.insertAll(it.farmers)
+                }
             }
         }
     }

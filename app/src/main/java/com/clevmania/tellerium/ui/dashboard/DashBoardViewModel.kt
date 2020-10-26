@@ -37,11 +37,12 @@ class DashBoardViewModel(
             _progress.value = EventUtils(true)
 
             try {
+                val farmersCount = farmerLocalDataSource.countFarmers()
+                _farmersCount.value = EventUtils((farmersCount))
+
                 val count = farmLocalDataSource.countFarm()
                 _farmCount.value = EventUtils((count))
 
-                val farmersCount = farmerLocalDataSource.countFarmers()
-                _farmersCount.value = EventUtils((farmersCount))
             }catch (ex: Exception){
                 _error.value = EventUtils(ex.toErrorMessage())
             }finally {
