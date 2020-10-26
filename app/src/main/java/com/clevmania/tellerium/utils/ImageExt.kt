@@ -12,15 +12,15 @@ import com.google.android.material.imageview.ShapeableImageView
 fun ShapeableImageView.loadImage(imageUrl: String){
     Glide.with(context)
         .load(imageUrl)
-        .placeholder(R.drawable.ic_launcher_background)
-        .error(R.drawable.ic_launcher_background)
+        .placeholder(R.drawable.ic_planting)
+        .error(R.drawable.ic_planting)
         .into(this)
 }
 
 fun ImageView.loadImage(imageUrl: String){
     Glide.with(context)
         .load(imageUrl)
-        .placeholder(R.drawable.ic_launcher_background)
-        .error(R.drawable.ic_launcher_background)
+        .placeholder(R.drawable.ic_planting)
+        .error(R.drawable.ic_planting)
         .into(this)
 }
