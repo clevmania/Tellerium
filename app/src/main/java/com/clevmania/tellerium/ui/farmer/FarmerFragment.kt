@@ -11,6 +11,7 @@ import com.clevmania.tellerium.R
 import com.clevmania.tellerium.ui.base.BaseFragment
 import com.clevmania.tellerium.utils.EventObserver
 import com.clevmania.tellerium.utils.InjectorUtils
+import com.clevmania.tellerium.utils.afterTextChanged
 import kotlinx.android.synthetic.main.farmer_fragment.*
 
 class FarmerFragment : BaseFragment() {
@@ -30,6 +31,7 @@ class FarmerFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rvFarmer.adapter = adapter
+        searchFarmers()
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -47,6 +49,24 @@ class FarmerFragment : BaseFragment() {
                 farmersList.addAll(it)
                 adapter.notifyDataSetChanged()
             })
+        }
+    }
+
+    private fun searchFarmers() {
+        tieSearchFarmer.afterTextChanged { query ->
+            farmersList.let {
+                if (!query.isBlank()) {
+                    val searchResult = it.filter { item ->
+                        item.first_name.contains(query, ignoreCase = true) ||
+                                item.surname.isNotBlank() &&
+                                item.surname.contains(query, ignoreCase = true) ||
+                                item.lga.contains(query, ignoreCase = true)
+                    }
+                    adapter.submitData(searchResult)
+                } else {
+                    adapter.submitData(it)
+                }
+            }
         }
     }
 

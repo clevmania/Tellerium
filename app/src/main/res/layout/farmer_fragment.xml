@@ -7,7 +7,7 @@
     tools:context=".ui.farmer.FarmerFragment">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilSearchBook"
+        android:id="@+id/tilSearchFarmer"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="0dp"
         android:layout_height="50dp"
@@ -24,12 +24,12 @@
         app:startIconDrawable="@drawable/ic_search">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tieSearchBooks"
+            android:id="@+id/tieSearchFarmer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_border"
             android:fontFamily="@font/source_sans_pro_regular"
-            android:hint="@string/search_books"
+            android:hint="@string/search_farmer"
             android:imeOptions="actionSearch"
             android:inputType="text"
             android:textColorHint="@color/colorEditTextHint"
@@ -48,7 +48,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilSearchBook"
+        app:layout_constraintTop_toBottomOf="@+id/tilSearchFarmer"
         tools:listitem="@layout/item_farmer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

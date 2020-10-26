@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.item_farmer.view.*
  * @author by Lawrence on 10/24/20.
  * for Tellerium
  */
-class FarmerAdapter(private val farmersList: List<Farmer>): RecyclerView.Adapter<FarmerAdapter.ViewHolder>() {
+class FarmerAdapter(private var farmersList: MutableList<Farmer>): RecyclerView.Adapter<FarmerAdapter.ViewHolder>() {
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         fun bindView(farmer: Farmer) {
             itemView.tvFarmerName.text = itemView.context.getString(
@@ -33,6 +33,12 @@ class FarmerAdapter(private val farmersList: List<Farmer>): RecyclerView.Adapter
         private fun prepareImageLink(link: String): String{
             return "${Constants.imageBaseUrl}$link"
         }
+    }
+
+    fun submitData(filteredList: List<Farmer>) {
+        farmersList = mutableListOf()
+        farmersList.addAll(filteredList)
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
