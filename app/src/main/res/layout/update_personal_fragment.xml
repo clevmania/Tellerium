@@ -56,7 +56,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/source_sans_pro_semi_bold"
-            android:text="Registration Number"
+            android:text="@string/registration_number"
             android:textColor="@color/colorTextPrimary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tilFarmName" />
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
-            android:text="First Name"
+            android:text="@string/first_name"
             android:fontFamily="@font/source_sans_pro_semi_bold"
             android:textColor="@color/colorTextPrimary"
             app:layout_constraintStart_toStartOf="parent"
@@ -134,7 +134,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/source_sans_pro_semi_bold"
-            android:text="Middle Name"
+            android:text="@string/middle_name"
             android:textColor="@color/colorTextPrimary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tilFirstName" />
@@ -173,7 +173,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/source_sans_pro_semi_bold"
-            android:text="Surname"
+            android:text="@string/surname"
             android:textColor="@color/colorTextPrimary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tilMiddleName" />
@@ -212,7 +212,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/source_sans_pro_semi_bold"
-            android:text="DOB"
+            android:text="@string/dob"
             android:textColor="@color/colorTextPrimary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tilSurname" />
@@ -253,7 +253,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/source_sans_pro_semi_bold"
-            android:text="Gender"
+            android:text="@string/gender"
             android:textColor="@color/colorTextPrimary"
             app:layout_constraintStart_toStartOf="@+id/tilGender"
             app:layout_constraintTop_toBottomOf="@+id/tilSurname" />
@@ -294,7 +294,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/source_sans_pro_semi_bold"
-            android:text="Nationality"
+            android:text="@string/nationality"
             android:textColor="@color/colorTextPrimary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tilDob" />
@@ -334,7 +334,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/source_sans_pro_semi_bold"
-            android:text="Marital Status"
+            android:text="@string/marital_status"
             android:textColor="@color/colorTextPrimary"
             app:layout_constraintStart_toStartOf="@+id/tilMaritalStatus"
             app:layout_constraintTop_toBottomOf="@+id/tilGender" />
@@ -374,7 +374,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
-            android:text="Occupation"
+            android:text="@string/occupation"
             android:fontFamily="@font/source_sans_pro_semi_bold"
             android:textColor="@color/colorTextPrimary"
             app:layout_constraintStart_toStartOf="parent"
@@ -414,7 +414,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/source_sans_pro_semi_bold"
-            android:text="Address"
+            android:text="@string/address"
             android:textColor="@color/colorTextPrimary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tilOccupation" />
@@ -453,7 +453,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/source_sans_pro_semi_bold"
-            android:text="Spouse Name"
+            android:text="@string/spouse_name"
             android:textColor="@color/colorTextPrimary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tilAddress" />
@@ -493,7 +493,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/source_sans_pro_semi_bold"
-            android:text="City"
+            android:text="@string/city"
             android:textColor="@color/colorTextPrimary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tilSpouseName" />
@@ -533,7 +533,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/source_sans_pro_semi_bold"
-            android:text="LGA"
+            android:text="@string/lga"
             android:textColor="@color/colorTextPrimary"
             app:layout_constraintStart_toStartOf="@+id/tilLGA"
             app:layout_constraintTop_toBottomOf="@+id/tilSpouseName" />
@@ -573,7 +573,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/source_sans_pro_semi_bold"
-            android:text="Mobile Number"
+            android:text="@string/mobile_number"
             android:textColor="@color/colorTextPrimary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tilCity" />
@@ -614,7 +614,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/source_sans_pro_semi_bold"
-            android:text="Email"
+            android:text="@string/email"
             android:textColor="@color/colorTextPrimary"
             app:layout_constraintStart_toStartOf="@+id/tilMaritalStatus"
             app:layout_constraintTop_toBottomOf="@+id/tilLGA" />

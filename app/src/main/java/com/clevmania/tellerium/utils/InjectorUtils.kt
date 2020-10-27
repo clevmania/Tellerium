@@ -10,6 +10,7 @@ import com.clevmania.tellerium.ui.farmer.FarmerRepository
 import com.clevmania.tellerium.ui.farmer.FarmerViewModelFactory
 import com.clevmania.tellerium.ui.farmerdetail.FarmerDetailViewModelFactory
 import com.clevmania.tellerium.ui.update.AddFarmViewModelFactory
+import com.clevmania.tellerium.ui.update.personal.UpdatePersonalViewModelFactory
 
 /**
  * @author by Lawrence on 10/24/20.
@@ -71,5 +72,9 @@ object InjectorUtils {
 
     fun getPreference(context: Context): PreferenceProvider{
         return PreferenceProvider(provideSharedPreference(context))
+    }
+
+    fun provideUpdatePersonalViewModelFactory(context: Context) : UpdatePersonalViewModelFactory{
+        return UpdatePersonalViewModelFactory(provideFarmerDataSource(context))
     }
 }

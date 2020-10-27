@@ -13,7 +13,7 @@ import java.util.regex.Pattern
 class ValidationException (message:String)  : Exception(message)
 
 enum class ValidationType {
-    EMAIL, PHONE, PASSWORD, NAME, LATITUDE, LONGITUDE
+    EMAIL, PHONE, PASSWORD, NAME, LATITUDE, LONGITUDE, REQUIRED
 }
 
 @Throws(ValidationException::class)
@@ -88,6 +88,13 @@ fun TextInputLayout.validate(validationType: ValidationType,
                 this.error = "Invalid Longitude"
                 this.isErrorEnabled = true
                 throw ValidationException("Incorrect Mobile Number")
+            }
+        }
+        ValidationType.REQUIRED -> {
+            if (value.trim().isBlank()) {
+                this.error = "$label is required"
+                this.isErrorEnabled = true
+                throw  ValidationException("$label is required")
             }
         }
     }

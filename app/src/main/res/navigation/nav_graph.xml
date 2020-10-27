@@ -99,5 +99,10 @@
         <argument
             android:name="farmerInfo"
             app:argType="com.clevmania.tellerium.ui.farmer.model.Farmer" />
+        <action
+            android:id="@+id/action_updatePersonalFragment_to_successFragment"
+            app:destination="@id/successFragment"
+            app:popUpTo="@id/farmerDetailFragment"
+            app:popUpToInclusive="false" />
     </fragment>
 </navigation>
