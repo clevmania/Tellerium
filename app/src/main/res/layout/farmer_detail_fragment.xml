@@ -9,9 +9,9 @@
     <ImageView
         android:id="@+id/ivFarmerPassport"
         android:layout_width="0dp"
-        android:layout_height="224dp"
+        android:layout_height="240dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -32,9 +32,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabIndicator="@drawable/ic_tab_divider"
-            app:tabIndicatorColor="@color/colorDivider"
+            app:tabIndicatorColor="@color/colorPrimaryButton"
             app:tabRippleColor="@android:color/transparent"
-            app:tabSelectedTextColor="@color/colorTextPrimary"
+            app:tabSelectedTextColor="@color/colorPrimaryButton"
             app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
             app:tabTextColor="@color/colorTextSecondary" />
 

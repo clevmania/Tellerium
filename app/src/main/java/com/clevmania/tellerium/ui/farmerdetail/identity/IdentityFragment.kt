@@ -10,12 +10,17 @@ import com.clevmania.tellerium.ui.farmer.model.Farmer
 import com.clevmania.tellerium.ui.farmerdetail.FarmerDetailViewModel
 import com.clevmania.tellerium.utils.Constants
 import com.clevmania.tellerium.utils.EventObserver
+import com.clevmania.tellerium.utils.InjectorUtils
 import com.clevmania.tellerium.utils.loadImage
 import kotlinx.android.synthetic.main.fragment_identity.*
 
 
 class IdentityFragment : Fragment() {
     private lateinit var viewModel: FarmerDetailViewModel
+
+    private val imageUrl by lazy {
+        InjectorUtils.getPreference(requireContext()).getImageBaseUrl()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,13 +51,13 @@ class IdentityFragment : Fragment() {
         tvExpiryDate.text = farmer.expiry_date
         tvIdImage.text = farmer.id_image.takeLast(20)
         ivIdImage.loadImage(getString(
-            R.string.farmers_image,Constants.imageBaseUrl,farmer.id_image))
+            R.string.farmers_image,imageUrl,farmer.id_image))
         tvFarmerPhoto.text = farmer.passport_photo.takeLast(20)
         ivFarmerPhoto.loadImage(getString(
-            R.string.farmers_image,Constants.imageBaseUrl,farmer.passport_photo))
+            R.string.farmers_image,imageUrl,farmer.passport_photo))
         farmer.fingerprint.splitToSequence(";").first().apply {
             tvFingerPrint.text = this.takeLast(20)
-            ivFingerPrint.loadImage(getString(R.string.farmers_image, Constants.imageBaseUrl,this))
+            ivFingerPrint.loadImage(getString(R.string.farmers_image, imageUrl,this))
         }
 
     }

@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.clevmania.tellerium.ui.farmer.model.Farmer
 import com.clevmania.tellerium.R
 import com.clevmania.tellerium.utils.Constants
+import com.clevmania.tellerium.utils.InjectorUtils
 import com.clevmania.tellerium.utils.loadImage
 import kotlinx.android.synthetic.main.item_farmer.view.*
 
@@ -17,12 +18,16 @@ import kotlinx.android.synthetic.main.item_farmer.view.*
  */
 class FarmerAdapter(private var farmersList: MutableList<Farmer>): RecyclerView.Adapter<FarmerAdapter.ViewHolder>() {
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+        private val imageUrl by lazy {
+            InjectorUtils.getPreference(itemView.context).getImageBaseUrl()
+        }
+
         fun bindView(farmer: Farmer) {
             itemView.tvFarmerName.text = itemView.context.getString(
                 R.string.farmers_full_name,farmer.first_name,farmer.surname)
             itemView.tvFarmerMobile.text = farmer.mobile_no
             itemView.tvLocale.text = farmer.lga
-            itemView.ivFarmerImg.loadImage(prepareImageLink(farmer.passport_photo))
+            itemView.ivFarmerImg.loadImage(prepareImageLink(imageUrl,farmer.passport_photo))
             itemView.setOnClickListener {
                 val action = FarmerFragmentDirections
                     .actionFarmerFragmentToFarmerDetailFragment(farmer.farmer_id)
@@ -30,8 +35,8 @@ class FarmerAdapter(private var farmersList: MutableList<Farmer>): RecyclerView.
             }
         }
 
-        private fun prepareImageLink(link: String): String{
-            return "${Constants.imageBaseUrl}$link"
+        private fun prepareImageLink(baseUrl: String, link: String): String{
+            return "$baseUrl$link"
         }
     }
 

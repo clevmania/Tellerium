@@ -1,6 +1,7 @@
 package com.clevmania.tellerium.utils
 
 import android.content.Context
+import android.content.SharedPreferences
 import com.clevmania.tellerium.api.FarmerDataService
 import com.clevmania.tellerium.api.TelleriumApiService
 import com.clevmania.tellerium.data.*
@@ -21,7 +22,8 @@ object InjectorUtils {
     }
 
     private fun provideFarmerRepository(context: Context): FarmerRepository {
-        return FarmerRepository(provideService(), provideFarmerDataSource(context))
+        return FarmerRepository(provideService(),
+            provideFarmerDataSource(context), getPreference(context))
     }
 
     fun provideViewModelFactory(context: Context): FarmerViewModelFactory {
@@ -61,5 +63,13 @@ object InjectorUtils {
     fun provideDashboardViewModelFactory(context: Context): DashboardViewModelFactory{
         return DashboardViewModelFactory(provideFarmerDataSource(context),
             provideFarmDataSource(context))
+    }
+
+    private fun provideSharedPreference(context: Context): SharedPreferences {
+        return context.getSharedPreferences(Constants.PREF_IMAGE_URL, Context.MODE_PRIVATE)
+    }
+
+    fun getPreference(context: Context): PreferenceProvider{
+        return PreferenceProvider(provideSharedPreference(context))
     }
 }

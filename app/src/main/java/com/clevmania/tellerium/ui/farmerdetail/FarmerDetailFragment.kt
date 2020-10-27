@@ -24,6 +24,10 @@ class FarmerDetailFragment : BaseFragment() {
         InjectorUtils.provideFarmerDetailViewModelFactory(requireContext())
     }
 
+    private val imageUrl by lazy {
+        InjectorUtils.getPreference(requireContext()).getImageBaseUrl()
+    }
+
     companion object {
         fun newInstance() = FarmerDetailFragment()
     }
@@ -66,7 +70,7 @@ class FarmerDetailFragment : BaseFragment() {
 
             farmerInfo.observe(viewLifecycleOwner, EventObserver{
                 ivFarmerPassport.loadImage(
-                    getString(R.string.farmers_image,Constants.imageBaseUrl,it.passport_photo))
+                    getString(R.string.farmers_image,imageUrl,it.passport_photo))
                 shareFarmerDetail(it)
             })
         }
