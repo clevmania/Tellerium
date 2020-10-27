@@ -59,6 +59,9 @@
         <action
             android:id="@+id/action_farmerDetailFragment_to_addFarmFragment"
             app:destination="@id/addFarmFragment" />
+        <action
+            android:id="@+id/action_farmerDetailFragment_to_updatePersonalFragment"
+            app:destination="@id/updatePersonalFragment" />
     </fragment>
     <fragment
         android:id="@+id/addFarmFragment"
@@ -88,4 +91,13 @@
         android:name="com.clevmania.tellerium.ui.dashboard.DashBoardFragment"
         android:label="Dashboard"
         tools:layout="@layout/dash_board_fragment" />
+    <fragment
+        android:id="@+id/updatePersonalFragment"
+        android:name="com.clevmania.tellerium.ui.update.personal.UpdatePersonalFragment"
+        android:label="update_personal_fragment"
+        tools:layout="@layout/update_personal_fragment">
+        <argument
+            android:name="farmerInfo"
+            app:argType="com.clevmania.tellerium.ui.farmer.model.Farmer" />
+    </fragment>
 </navigation>

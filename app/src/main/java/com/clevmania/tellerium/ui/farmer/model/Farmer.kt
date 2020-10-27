@@ -2,6 +2,7 @@ package com.clevmania.tellerium.ui.farmer.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity
 data class Farmer(
@@ -31,4 +32,10 @@ data class Farmer(
     val spouse_name: String,
     val state: String,
     val surname: String
-)
+): Serializable
+{
+    constructor() : this("","","","","","",
+        "","","","","","","",
+        "","","","","","",
+        "","","","","","")
+}
