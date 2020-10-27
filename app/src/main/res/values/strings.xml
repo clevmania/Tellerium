@@ -46,5 +46,4 @@
     <string name="city">City</string>
     <string name="lga">LGA</string>
     <string name="mobile_number">Mobile Number</string>
-    <string name="email">Email</string>
 </resources>

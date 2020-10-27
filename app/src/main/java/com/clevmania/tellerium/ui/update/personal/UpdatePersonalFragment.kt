@@ -10,11 +10,7 @@ import androidx.navigation.fragment.navArgs
 import com.clevmania.tellerium.R
 import com.clevmania.tellerium.ui.base.BaseFragment
 import com.clevmania.tellerium.ui.farmer.model.Farmer
-import com.clevmania.tellerium.utils.EventObserver
-import com.clevmania.tellerium.utils.InjectorUtils
-import com.clevmania.tellerium.utils.ValidationType
-import com.clevmania.tellerium.utils.validate
-import kotlinx.android.synthetic.main.fragment_personal.*
+import com.clevmania.tellerium.utils.*
 import kotlinx.android.synthetic.main.update_personal_fragment.*
 
 class UpdatePersonalFragment : BaseFragment() {
@@ -38,7 +34,7 @@ class UpdatePersonalFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         populateView()
-        mbUpdateProfile.setOnClickListener { updateProfile() }
+        mbSaveProfile.setOnClickListener { updateProfile() }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -62,7 +58,7 @@ class UpdatePersonalFragment : BaseFragment() {
         tieRegistrationNo.setText(args.farmerInfo.reg_no)
         tieFirstName.setText(args.farmerInfo.first_name)
         tieMiddleName.setText(args.farmerInfo.middle_name)
-        tieSurname.setText(args.farmerInfo.middle_name)
+        tieSurname.setText(args.farmerInfo.surname)
         tieDob.setText(args.farmerInfo.dob)
         tieGender.setText(args.farmerInfo.gender)
         tieNationality.setText(args.farmerInfo.nationality)
@@ -77,29 +73,33 @@ class UpdatePersonalFragment : BaseFragment() {
     }
 
     private fun updateProfile(){
-        val regNo = tilRegistrationNo.validate(ValidationType.REQUIRED,getString(R.string.registration_number))
-        val fName = tilFirstName.validate(ValidationType.NAME, getString(R.string.first_name))
-        val mName = tilMiddleName.validate(ValidationType.NAME, getString(R.string.middle_name))
-        val surname = tilSurname.validate(ValidationType.NAME, getString(R.string.surname))
-        val dob = tilDob.validate(ValidationType.REQUIRED, getString(R.string.dob))
-        val gender = tilGender.validate(ValidationType.REQUIRED, getString(R.string.gender))
-        val nation = tilNationality.validate(ValidationType.REQUIRED, getString(R.string.nationality))
-        val status = tilMaritalStatus.validate(ValidationType.REQUIRED, getString(R.string.marital_status))
-        val occupation = tilOccupation.validate(ValidationType.REQUIRED, getString(R.string.occupation))
-        val address = tilAddress.validate(ValidationType.REQUIRED, getString(R.string.address))
-        val spouse = tilSpouseName.validate(ValidationType.REQUIRED, getString(R.string.spouse_name))
-        val city = tilCity.validate(ValidationType.REQUIRED, getString(R.string.city))
-        val lga = tilLGA.validate(ValidationType.REQUIRED, getString(R.string.lga))
-        val mobile = tilMobileNumber.validate(ValidationType.PHONE, getString(R.string.mobile_number))
-        val email = tilEmail.validate(ValidationType.EMAIL, getString(R.string.email))
+        try {
+            val regNo = tilRegistrationNo.validate(ValidationType.REQUIRED,getString(R.string.registration_number))
+            val fName = tilFirstName.validate(ValidationType.NAME, getString(R.string.first_name))
+            val mName = tilMiddleName.validate(ValidationType.NAME, getString(R.string.middle_name))
+            val surname = tilSurname.validate(ValidationType.NAME, getString(R.string.surname))
+            val dob = tilDob.validate(ValidationType.REQUIRED, getString(R.string.dob))
+            val gender = tilGender.validate(ValidationType.REQUIRED, getString(R.string.gender))
+            val nation = tilNationality.validate(ValidationType.REQUIRED, getString(R.string.nationality))
+            val status = tilMaritalStatus.validate(ValidationType.REQUIRED, getString(R.string.marital_status))
+            val occupation = tilOccupation.validate(ValidationType.REQUIRED, getString(R.string.occupation))
+            val address = tilAddress.validate(ValidationType.REQUIRED, getString(R.string.address))
+            val spouse = tilSpouseName.validate(ValidationType.REQUIRED, getString(R.string.spouse_name))
+            val city = tilCity.validate(ValidationType.REQUIRED, getString(R.string.city))
+            val lga = tilLGA.validate(ValidationType.REQUIRED, getString(R.string.lga))
+            val mobile = tilMobileNumber.validate(ValidationType.PHONE, getString(R.string.mobile_number))
+            val email = tilEmail.validate(ValidationType.EMAIL, getString(R.string.email))
 
-        val updatedFarmerInfo = Farmer(address,args.farmerInfo.bvn,city,dob,email,
-            args.farmerInfo.expiry_date,args.farmerInfo.farmer_id,args.farmerInfo.fingerprint,
-            fName,gender,args.farmerInfo.id_image,args.farmerInfo.id_no,args.farmerInfo.id_type,
-            args.farmerInfo.issue_date,lga,status,mName,mobile,nation,occupation,
-            args.farmerInfo.passport_photo,regNo,spouse, args.farmerInfo.state,surname)
+            val updatedFarmerInfo = Farmer(address,args.farmerInfo.bvn,city,dob,email,
+                args.farmerInfo.expiry_date,args.farmerInfo.farmer_id,args.farmerInfo.fingerprint,
+                fName,gender,args.farmerInfo.id_image,args.farmerInfo.id_no,args.farmerInfo.id_type,
+                args.farmerInfo.issue_date,lga,status,mName,mobile,nation,occupation,
+                args.farmerInfo.passport_photo,regNo,spouse, args.farmerInfo.state,surname)
 
-        viewModel.updateDetails(updatedFarmerInfo)
+            viewModel.updateDetails(updatedFarmerInfo)
+        }catch (ex : ValidationException){
+            ex.printStackTrace()
+        }
     }
 
 }

@@ -94,7 +94,7 @@
     <fragment
         android:id="@+id/updatePersonalFragment"
         android:name="com.clevmania.tellerium.ui.update.personal.UpdatePersonalFragment"
-        android:label="update_personal_fragment"
+        android:label="Update Profile"
         tools:layout="@layout/update_personal_fragment">
         <argument
             android:name="farmerInfo"

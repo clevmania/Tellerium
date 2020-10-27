@@ -11,55 +11,16 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/tvFarmName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:text="Farmers Name"
-            android:fontFamily="@font/source_sans_pro_semi_bold"
-            android:textColor="@color/colorTextPrimary"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilFarmName"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            app:boxBackgroundColor="@android:color/transparent"
-            app:boxStrokeColor="@color/colorTextInputLayoutBorder"
-            app:boxStrokeWidth="1dp"
-            app:hintAnimationEnabled="false"
-            app:hintEnabled="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvFarmName">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tieFarmName"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:fontFamily="@font/source_sans_pro_regular"
-                android:inputType="textPersonName"
-                android:textColorHint="@color/colorEditTextHint" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
             android:id="@+id/tvRegistrationNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/source_sans_pro_semi_bold"
             android:text="@string/registration_number"
             android:textColor="@color/colorTextPrimary"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tilFarmName" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilRegistrationNo"
