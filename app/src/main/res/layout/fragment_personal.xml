@@ -410,6 +410,25 @@
             app:layout_constraintTop_toTopOf="@+id/tvEmailAddressHeader"
             tools:text="09072341223" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mbUpdateProfile"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/source_sans_pro_bold"
+            android:text="@string/update_profile"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            app:backgroundTint="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmailAddress" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

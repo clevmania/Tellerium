@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.clevmania.tellerium.R
 import com.clevmania.tellerium.ui.farmer.model.Farmer
+import com.clevmania.tellerium.ui.farmerdetail.FarmerDetailFragmentDirections
 import com.clevmania.tellerium.ui.farmerdetail.FarmerDetailViewModel
 import com.clevmania.tellerium.utils.EventObserver
 import kotlinx.android.synthetic.main.fragment_personal.*
@@ -17,6 +19,7 @@ import kotlinx.android.synthetic.main.fragment_personal.*
  */
 class PersonalFragment : Fragment(){
     private lateinit var viewModel: FarmerDetailViewModel
+    private lateinit var farmerInfo : Farmer
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,6 +27,13 @@ class PersonalFragment : Fragment(){
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_personal, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        mbUpdateProfile.setOnClickListener {
+            launchPersonalProfileUpdate()
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -41,6 +51,7 @@ class PersonalFragment : Fragment(){
     }
 
     private fun populateView(farmer: Farmer){
+        farmerInfo = farmer
         tvAddress.text = farmer.address
         tvRegNo.text = farmer.reg_no
         tvBvn.text = farmer.bvn
@@ -57,5 +68,11 @@ class PersonalFragment : Fragment(){
         tvLGA.text = farmer.lga
         tvMobile.text = farmer.mobile_no
         tvEmailAddress.text = farmer.email_address
+    }
+
+    private fun launchPersonalProfileUpdate(){
+        val action = FarmerDetailFragmentDirections
+            .actionFarmerDetailFragmentToUpdatePersonalFragment(farmerInfo)
+        findNavController().navigate(action)
     }
 }
