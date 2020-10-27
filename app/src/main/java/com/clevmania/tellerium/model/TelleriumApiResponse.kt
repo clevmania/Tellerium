@@ -1,4 +1,4 @@
-package com.clevmania.tellerium.ui.model
+package com.clevmania.tellerium.model
 
 /**
  * @author by Lawrence on 10/24/20.
