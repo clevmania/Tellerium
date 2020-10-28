@@ -10,8 +10,11 @@ import com.clevmania.tellerium.utils.EventUtils
 import com.clevmania.tellerium.utils.toErrorMessage
 import kotlinx.coroutines.launch
 import java.lang.Exception
+import javax.inject.Inject
 
-class AddFarmViewModel(private val farmLocalDataSource: FarmLocalDataSource) : ViewModel() {
+class AddFarmViewModel @Inject constructor(
+    private val farmLocalDataSource: FarmLocalDataSource
+) : ViewModel() {
     private val _progress = MutableLiveData<EventUtils<Boolean>>()
     val progress : LiveData<EventUtils<Boolean>> = _progress
 
