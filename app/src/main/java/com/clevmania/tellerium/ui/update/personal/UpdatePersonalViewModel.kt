@@ -9,8 +9,11 @@ import com.clevmania.tellerium.ui.farmer.model.Farmer
 import com.clevmania.tellerium.utils.EventUtils
 import com.clevmania.tellerium.utils.toErrorMessage
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class UpdatePersonalViewModel(private val farmerLocalDataSource: FarmerLocalDataSource) : ViewModel() {
+class UpdatePersonalViewModel @Inject constructor(
+    private val farmerLocalDataSource: FarmerLocalDataSource
+) : ViewModel() {
     private val _progress = MutableLiveData<EventUtils<Boolean>>()
     val progress: LiveData<EventUtils<Boolean>> = _progress
 
