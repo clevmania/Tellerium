@@ -10,8 +10,9 @@ import com.clevmania.tellerium.utils.EventUtils
 import com.clevmania.tellerium.utils.toErrorMessage
 import kotlinx.coroutines.launch
 import java.lang.Exception
+import javax.inject.Inject
 
-class DashBoardViewModel(
+class DashBoardViewModel @Inject constructor(
     private val farmLocalDataSource: FarmLocalDataSource,
     private val farmerLocalDataSource: FarmerLocalDataSource
 ) : ViewModel() {

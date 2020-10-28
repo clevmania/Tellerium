@@ -1,5 +1,6 @@
 package com.clevmania.tellerium.ui.dashboard
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,17 +9,18 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.clevmania.tellerium.R
+import com.clevmania.tellerium.TelleriumApp
 import com.clevmania.tellerium.ui.base.BaseFragment
 import com.clevmania.tellerium.utils.EventObserver
 import com.clevmania.tellerium.utils.InjectorUtils
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.dash_board_fragment.*
+import javax.inject.Inject
 
 class DashBoardFragment : BaseFragment() {
 
-    private val viewModel by viewModels<DashBoardViewModel> {
-        InjectorUtils.provideDashboardViewModelFactory(requireContext())
-    }
+    @Inject
+    lateinit var viewModel : DashBoardViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,6 +65,11 @@ class DashBoardFragment : BaseFragment() {
 
 
         }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        (requireActivity().application as TelleriumApp).appComponent.inject(this)
     }
 
 }

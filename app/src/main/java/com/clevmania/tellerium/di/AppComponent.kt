@@ -2,6 +2,7 @@ package com.clevmania.tellerium.di
 
 import android.content.Context
 import com.clevmania.tellerium.ui.MainActivity
+import com.clevmania.tellerium.ui.dashboard.DashBoardFragment
 import com.clevmania.tellerium.ui.farmer.FarmerFragment
 import com.clevmania.tellerium.ui.farmerdetail.FarmerDetailFragment
 import com.clevmania.tellerium.ui.farmerdetail.identity.IdentityFragment
@@ -25,5 +26,6 @@ interface AppComponent {
     fun inject(activity: MainActivity)
     fun inject(fragment: FarmerFragment)
     fun inject(fragment: FarmerDetailFragment)
+    fun inject(fragment: DashBoardFragment)
 
 }
