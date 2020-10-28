@@ -71,7 +71,7 @@ object InjectorUtils {
     }
 
     fun getPreference(context: Context): PreferenceProvider{
-        return PreferenceProvider(provideSharedPreference(context))
+        return PreferenceProvider(context)
     }
 
     fun provideUpdatePersonalViewModelFactory(context: Context) : UpdatePersonalViewModelFactory{
