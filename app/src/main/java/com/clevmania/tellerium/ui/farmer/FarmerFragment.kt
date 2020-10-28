@@ -13,13 +13,17 @@ import com.clevmania.tellerium.utils.EventObserver
 import com.clevmania.tellerium.utils.InjectorUtils
 import com.clevmania.tellerium.utils.afterTextChanged
 import kotlinx.android.synthetic.main.farmer_fragment.*
+import javax.inject.Inject
 
 class FarmerFragment : BaseFragment() {
     private val farmersList = arrayListOf<Farmer>()
     private val adapter: FarmerAdapter = FarmerAdapter(farmersList)
-    private val viewModel by viewModels<FarmerViewModel> {
-        InjectorUtils.provideViewModelFactory(requireContext())
-    }
+//    private val viewModel by viewModels<FarmerViewModel> {
+//        InjectorUtils.provideViewModelFactory(requireContext())
+//    }
+
+    @Inject
+    lateinit var viewModel: FarmerViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
