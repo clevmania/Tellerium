@@ -9,8 +9,9 @@ import com.clevmania.tellerium.utils.Constants.FetchLimit
 import com.clevmania.tellerium.utils.EventUtils
 import com.clevmania.tellerium.utils.toErrorMessage
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class FarmerViewModel(private val repository: FarmerRepository) : ViewModel() {
+class FarmerViewModel @Inject constructor(private val repository: FarmerRepository) : ViewModel() {
     private val _progress = MutableLiveData<EventUtils<Boolean>>()
     val progress: LiveData<EventUtils<Boolean>> = _progress
 

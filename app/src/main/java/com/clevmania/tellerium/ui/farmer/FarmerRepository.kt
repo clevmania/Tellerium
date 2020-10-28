@@ -7,12 +7,13 @@ import com.clevmania.tellerium.ui.farmer.model.Farmer
 import com.clevmania.tellerium.utils.PreferenceProvider
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
 /**
  * @author by Lawrence on 10/24/20.
  * for Tellerium
  */
-class FarmerRepository(
+class FarmerRepository @Inject constructor(
     private val apiService: FarmerDataService,
     private val dataSource: FarmerLocalDataSource,
     private val preferenceProvider: PreferenceProvider
