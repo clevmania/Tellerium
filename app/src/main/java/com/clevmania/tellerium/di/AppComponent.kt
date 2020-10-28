@@ -1,7 +1,7 @@
 package com.clevmania.tellerium.di
 
 import android.content.Context
-import com.clevmania.tellerium.MainActivity
+import com.clevmania.tellerium.ui.MainActivity
 import com.clevmania.tellerium.ui.farmer.FarmerFragment
 import dagger.BindsInstance
 import dagger.Component
