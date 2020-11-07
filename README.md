@@ -32,10 +32,8 @@ The app consists of 7 flows
 
 - Dashboard: Gives analytics on captured farms and farmers
 
-- Add Farm: Capture a farm
+- Update: Capture a farm, Update personal farmer record
 
 ## Disclaimer
 
-If an application gets larger, there would be lots of boilerplate code which can be error-prone.
-
-The app uses a manual dependency injection, on a norm dagger would be used. Also sensitive key should not be in source control but i've added a key for the purposes of this assessment.
+Sensitive key should not be in source control but i've added a key for the purposes of this assessment.
