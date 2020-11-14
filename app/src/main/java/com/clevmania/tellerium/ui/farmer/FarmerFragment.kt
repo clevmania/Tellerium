@@ -1,5 +1,6 @@
 package com.clevmania.tellerium.ui.farmer
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,18 +9,21 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.clevmania.tellerium.ui.farmer.model.Farmer
 import com.clevmania.tellerium.R
+import com.clevmania.tellerium.TelleriumApp
+import com.clevmania.tellerium.ui.MainActivity
 import com.clevmania.tellerium.ui.base.BaseFragment
 import com.clevmania.tellerium.utils.EventObserver
 import com.clevmania.tellerium.utils.InjectorUtils
 import com.clevmania.tellerium.utils.afterTextChanged
 import kotlinx.android.synthetic.main.farmer_fragment.*
+import javax.inject.Inject
 
 class FarmerFragment : BaseFragment() {
     private val farmersList = arrayListOf<Farmer>()
     private val adapter: FarmerAdapter = FarmerAdapter(farmersList)
-    private val viewModel by viewModels<FarmerViewModel> {
-        InjectorUtils.provideViewModelFactory(requireContext())
-    }
+
+    @Inject
+    lateinit var viewModel: FarmerViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -68,6 +72,11 @@ class FarmerFragment : BaseFragment() {
                 }
             }
         }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        (requireActivity().application as TelleriumApp).appComponent.inject(this)
     }
 
 }

@@ -1,4 +1,4 @@
-package com.clevmania.tellerium
+package com.clevmania.tellerium.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.clevmania.tellerium.R
 import com.clevmania.tellerium.utils.makeGone
 import com.clevmania.tellerium.utils.makeVisible
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,7 +24,8 @@ class MainActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.splashFragment,R.id.farmerFragment
+                R.id.splashFragment,
+                R.id.farmerFragment
             ), null
         )
 

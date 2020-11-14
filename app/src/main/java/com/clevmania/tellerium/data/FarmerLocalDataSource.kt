@@ -2,12 +2,13 @@ package com.clevmania.tellerium.data
 
 import androidx.lifecycle.LiveData
 import com.clevmania.tellerium.ui.farmer.model.Farmer
+import javax.inject.Inject
 
 /**
  * @author by Lawrence on 10/25/20.
  * for Tellerium
  */
-class FarmerLocalDataSource(private val farmerDao: FarmerDao): FarmerDataSource {
+class FarmerLocalDataSource @Inject constructor(private val farmerDao: FarmerDao): FarmerDataSource {
     override fun getAllFarmers(): LiveData<List<Farmer>> {
         return farmerDao.getAllFarmers()
     }

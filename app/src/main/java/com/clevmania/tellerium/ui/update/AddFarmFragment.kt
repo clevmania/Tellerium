@@ -1,5 +1,6 @@
 package com.clevmania.tellerium.ui.update
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,17 +9,18 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.clevmania.tellerium.R
+import com.clevmania.tellerium.TelleriumApp
 import com.clevmania.tellerium.data.FarmEntity
 import com.clevmania.tellerium.ui.base.BaseFragment
 import com.clevmania.tellerium.utils.*
 import kotlinx.android.synthetic.main.add_farm_fragment.*
+import javax.inject.Inject
 
 class AddFarmFragment : BaseFragment() {
     private val args: AddFarmFragmentArgs by navArgs()
 
-    private val viewModel by viewModels<AddFarmViewModel> {
-        InjectorUtils.provideAddFarmViewModelFactory(requireContext())
-    }
+    @Inject
+    lateinit var viewModel : AddFarmViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -84,6 +86,11 @@ class AddFarmFragment : BaseFragment() {
                 findNavController().navigate(R.id.action_addFarmFragment_to_successFragment)
             })
         }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        (requireActivity().application as TelleriumApp).appComponent.inject(this)
     }
 
 }

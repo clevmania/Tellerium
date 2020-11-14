@@ -12,8 +12,9 @@ import com.clevmania.tellerium.utils.EventUtils
 import com.clevmania.tellerium.utils.toErrorMessage
 import kotlinx.coroutines.launch
 import java.lang.Exception
+import javax.inject.Inject
 
-class FarmerDetailViewModel(
+class FarmerDetailViewModel @Inject constructor(
     private val dataSource: FarmerLocalDataSource,
     private val farmDataSource: FarmLocalDataSource
 ) : ViewModel() {

@@ -1,5 +1,6 @@
 package com.clevmania.tellerium.ui.update.personal
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,10 +9,12 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.clevmania.tellerium.R
+import com.clevmania.tellerium.TelleriumApp
 import com.clevmania.tellerium.ui.base.BaseFragment
 import com.clevmania.tellerium.ui.farmer.model.Farmer
 import com.clevmania.tellerium.utils.*
 import kotlinx.android.synthetic.main.update_personal_fragment.*
+import javax.inject.Inject
 
 class UpdatePersonalFragment : BaseFragment() {
     private val args : UpdatePersonalFragmentArgs by navArgs()
@@ -20,9 +23,8 @@ class UpdatePersonalFragment : BaseFragment() {
         fun newInstance() = UpdatePersonalFragment()
     }
 
-    private val viewModel by viewModels<UpdatePersonalViewModel> {
-        InjectorUtils.provideUpdatePersonalViewModelFactory(requireContext())
-    }
+    @Inject
+    lateinit var viewModel : UpdatePersonalViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -100,6 +102,11 @@ class UpdatePersonalFragment : BaseFragment() {
         }catch (ex : ValidationException){
             ex.printStackTrace()
         }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        (requireActivity().application as TelleriumApp).appComponent.inject(this)
     }
 
 }

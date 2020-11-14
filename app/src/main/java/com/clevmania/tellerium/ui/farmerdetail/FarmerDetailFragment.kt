@@ -1,28 +1,27 @@
 package com.clevmania.tellerium.ui.farmerdetail
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.clevmania.tellerium.R
+import com.clevmania.tellerium.TelleriumApp
 import com.clevmania.tellerium.ui.base.BaseFragment
-import com.clevmania.tellerium.ui.farmer.FarmerViewModel
 import com.clevmania.tellerium.utils.Constants
 import com.clevmania.tellerium.utils.EventObserver
 import com.clevmania.tellerium.utils.InjectorUtils
 import com.clevmania.tellerium.utils.loadImage
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.farmer_detail_fragment.*
+import javax.inject.Inject
 
 class FarmerDetailFragment : BaseFragment() {
-    private val args : FarmerDetailFragmentArgs by navArgs()
+    private val args: FarmerDetailFragmentArgs by navArgs()
 
-    private val viewModel by viewModels<FarmerDetailViewModel> {
-        InjectorUtils.provideFarmerDetailViewModelFactory(requireContext())
-    }
+    @Inject
+    lateinit var viewModel: FarmerDetailViewModel
 
     private val imageUrl by lazy {
         InjectorUtils.getPreference(requireContext()).getImageBaseUrl()
@@ -42,7 +41,7 @@ class FarmerDetailFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getFarmer(args.id)
-        vpFarmerDetails.adapter = FarmerDetailsAdapter(this,viewModel)
+        vpFarmerDetails.adapter = FarmerDetailsAdapter(this, viewModel)
         TabLayoutMediator(tlFarmerDetails, vpFarmerDetails) { tab, position ->
             tab.text = getTabTitle(position)
         }.attach()
@@ -68,12 +67,18 @@ class FarmerDetailFragment : BaseFragment() {
                 showErrorDialog(it)
             })
 
-            farmerInfo.observe(viewLifecycleOwner, EventObserver{
+            farmerInfo.observe(viewLifecycleOwner, EventObserver {
                 ivFarmerPassport.loadImage(
-                    getString(R.string.farmers_image,imageUrl,it.passport_photo))
+                    getString(R.string.farmers_image, imageUrl, it.passport_photo)
+                )
                 shareFarmerDetail(it)
             })
         }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        (requireActivity().application as TelleriumApp).appComponent.inject(this)
     }
 
 }

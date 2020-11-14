@@ -1,10 +1,12 @@
 package com.clevmania.tellerium.data
 
+import javax.inject.Inject
+
 /**
  * @author by Lawrence on 10/26/20.
  * for Tellerium
  */
-class FarmLocalDataSource(private val farmDao: FarmDao): FarmDataSource {
+class FarmLocalDataSource @Inject constructor(private val farmDao: FarmDao): FarmDataSource {
     override suspend fun getCapturedFarmById(farmerId: String): FarmEntity {
         return farmDao.getCapturedFarmById(farmerId)
     }

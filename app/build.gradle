@@ -84,7 +84,9 @@ dependencies {
     /**Google Maps**/
     implementation "com.google.android.gms:play-services-maps:$play_maps"
 
-
+    /**Dagger**/
+    implementation "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
 }
 
 apply plugin: 'com.google.gms.google-services'
